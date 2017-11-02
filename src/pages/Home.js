@@ -4,12 +4,16 @@ import { inject, observer } from "mobx-react";
 import TorrentList from "../views/TorrentList";
 
 class Home extends React.Component {
+  state = {
+    currentPage: 0,
+  };
+
   componentDidMount() {
-    this.load(this.pageNumber);
+    this.load(1);
   }
 
-  get pageNumber() {
-    return 1;
+  componentWillUnmount() {
+    this.abort();
   }
 
   get paginator() {
@@ -17,13 +21,25 @@ class Home extends React.Component {
   }
 
   load(page) {
-    if (!this.paginator.hasPage(page)) {
-      this.paginator.loadPage(page);
+    if (this.paginator.has(page)) {
+      this.setState({
+        currentPage: page,
+      });
+      return;
     }
+    this.paginator.load(page).then(() => {
+      this.setState({
+        currentPage: page,
+      });
+    });
+  }
+
+  abort() {
+    this.paginator.abort();
   }
 
   render() {
-    const list = this.paginator.getPage(this.pageNumber);
+    const list = this.paginator.get(this.state.currentPage);
     if (!list) return null;
     return (
       <div>
