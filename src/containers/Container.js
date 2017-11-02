@@ -5,7 +5,7 @@ import { observer } from "mobx-react";
 import { TransitionGroup } from "react-transition-group";
 
 import Fade from "../views/transitions/Fade";
-import LoaderContainer from "./views/LoaderContainer";
+import LoaderContainer from "../views/LoaderContainer";
 
 class Container extends React.Component {
   static propTypes = {
