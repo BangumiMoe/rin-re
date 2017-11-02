@@ -1,6 +1,7 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
-import { Link } from "react-router-dom";
+
+import TorrentList from "../views/TorrentList";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -27,13 +28,7 @@ class Home extends React.Component {
     return (
       <div>
         <div>1 of {this.paginator.pageSize}</div>
-        <ul>
-          {list.map(item => (
-            <li key={item.id}>
-              <Link to={`/torrents/${item.id}`}>{item.title}</Link>
-            </li>
-          ))}
-        </ul>
+        <TorrentList list={list} />
       </div>
     );
   }

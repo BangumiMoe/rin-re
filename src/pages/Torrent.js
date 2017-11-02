@@ -1,6 +1,8 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 
+import TorrentInfo from "../views/TorrentInfo";
+
 class Torrent extends React.Component {
   componentDidMount() {
     this.load(this.id);
@@ -23,7 +25,7 @@ class Torrent extends React.Component {
   render() {
     const torrent = this.torrents.get(this.id);
     if (!torrent) return null;
-    return <div>{torrent.title}</div>;
+    return <TorrentInfo item={torrent} />;
   }
 }
 
