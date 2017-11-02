@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { TransitionGroup } from "react-transition-group";
 import { CircularProgress } from "material-ui";
+
+import Fade from "../../views/transitions/Fade";
 
 import "./LoaderContainer.css";
 
@@ -17,11 +20,15 @@ class LoaderContainer extends React.Component {
     return (
       <div className="LoaderContainer">
         {this.props.children}
-        {this.props.loading && (
-          <div className="LoaderContainer-overlay">
-            <CircularProgress />
-          </div>
-        )}
+        <TransitionGroup>
+          {this.props.loading && (
+            <Fade key="overlay">
+              <div className="LoaderContainer-overlay">
+                <CircularProgress />
+              </div>
+            </Fade>
+          )}
+        </TransitionGroup>
       </div>
     );
   }
