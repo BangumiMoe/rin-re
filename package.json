@@ -5,12 +5,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "prettier --list-different \"./**/*.{js,json,css}\"",
-    "format": "prettier --write \"./**/*.{js,json,css}\"",
+    "lint": "eslint . && prettier --list-different \"./**/*.{js,json,css}\"",
+    "format": "eslint --fix . && prettier --write \"./**/*.{js,json,css}\"",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,json,css}": [
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,css}": [
       "prettier --write",
       "git add"
     ]
