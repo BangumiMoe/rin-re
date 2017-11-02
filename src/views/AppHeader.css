@@ -1,0 +1,19 @@
+.AppHeader {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
+  background-color: #3f51b5;
+}
+
+.AppHeader-home {
+  display: block;
+  padding-top: 4rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.AppHeader-logo {
+  margin: 0;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+}

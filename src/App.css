@@ -1,0 +1,10 @@
+.App {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.App-content {
+  overflow: hidden;
+  margin: 2rem;
+}

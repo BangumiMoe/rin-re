@@ -11,8 +11,10 @@ class Container extends React.Component {
   };
 
   state = {
-    currentId: this.props.id,
+    currentId: null,
   };
+
+  mounted = true;
 
   componentDidMount() {
     this.load(this.props.id);
@@ -25,7 +27,7 @@ class Container extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.store.abort();
+    this.mounted = false;
   }
 
   load(id) {
@@ -37,9 +39,11 @@ class Container extends React.Component {
       return;
     }
     store.load(id).then(() => {
-      this.setState({
-        currentId: id,
-      });
+      if (this.mounted) {
+        this.setState({
+          currentId: id,
+        });
+      }
     });
   }
 

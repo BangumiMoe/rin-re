@@ -3,17 +3,19 @@ import PropTypes from "prop-types";
 
 import TorrentItem from "./TorrentItem";
 
+import "./TorrentList.css";
+
 class TorrentList extends React.Component {
   static propTypes = {
-    list: PropTypes.arrayOf(PropTypes.object).isRequired,
+    list: PropTypes.object.isRequired,
   };
 
   render() {
     const list = this.props.list;
     return (
-      <ul>
+      <ul className="TorrentList">
         {list.map(item => (
-          <li key={item.id}>
+          <li key={item.id} className="TorrentList-item">
             <TorrentItem item={item} />
           </li>
         ))}

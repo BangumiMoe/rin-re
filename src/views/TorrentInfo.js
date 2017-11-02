@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "./TorrentInfo.css";
+
 class TorrentInfo extends React.Component {
   static propTypes = {
     item: PropTypes.object.isRequired,
@@ -9,9 +11,9 @@ class TorrentInfo extends React.Component {
   render() {
     const item = this.props.item;
     return (
-      <div>
-        <h1>{item.title}</h1>
-      </div>
+      <article className="TorrentInfo">
+        <h1 className="TorrentInfo-title">{item.title}</h1>
+      </article>
     );
   }
 }

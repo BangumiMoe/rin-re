@@ -1,0 +1,16 @@
+.Paginator {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Paginator-buttons {
+  flex: 1;
+}
+
+.Paginator-text {
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.6);
+}

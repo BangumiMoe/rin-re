@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { CircularProgress } from "material-ui";
+
 import "./LoaderContainer.css";
 
 class LoaderContainer extends React.Component {
@@ -16,7 +18,9 @@ class LoaderContainer extends React.Component {
       <div className="LoaderContainer">
         {this.props.children}
         {this.props.loading && (
-          <div className="LoaderContainer-overlay">Loading...</div>
+          <div className="LoaderContainer-overlay">
+            <CircularProgress />
+          </div>
         )}
       </div>
     );
