@@ -1,9 +1,8 @@
 import React from "react";
 import { inject } from "mobx-react";
 
-import Container from "../containers/Container";
+import PaginatorContainer from "../containers/PaginatorContainer";
 import TorrentList from "../views/TorrentList";
-import Paginator from "../views/Paginator";
 
 class Home extends React.Component {
   get paginator() {
@@ -21,18 +20,13 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Container store={this.paginator} id={this.page}>
-        {(torrents, page) => (
-          <div>
-            <TorrentList list={torrents} />
-            <Paginator
-              value={page}
-              pageCount={this.paginator.pageCount}
-              onChange={this.handlePageChange}
-            />
-          </div>
-        )}
-      </Container>
+      <PaginatorContainer
+        store={this.paginator}
+        page={this.page}
+        onPageChange={this.handlePageChange}
+      >
+        {torrents => <TorrentList list={torrents} />}
+      </PaginatorContainer>
     );
   }
 }
