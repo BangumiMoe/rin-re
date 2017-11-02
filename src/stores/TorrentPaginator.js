@@ -11,7 +11,7 @@ const TorrentPage = types.array(TorrentItem);
 
 const TorrentPaginator = types
   .model({
-    pageSize: 0,
+    pageCount: 0,
     pages: types.optional(types.map(TorrentPage), {}),
   })
   .views(self => ({
@@ -23,7 +23,7 @@ const TorrentPaginator = types
     api(self, function*({ api, token }, page) {
       const request = api.torrents.getPage(page, { cancelToken: token });
       const result = (yield request).data;
-      self.pageSize = result.pageCount;
+      self.pageCount = result.pageCount;
       self.pages.set(page, result.torrents);
     }),
   );

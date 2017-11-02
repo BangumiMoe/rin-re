@@ -1,32 +1,25 @@
 import React from "react";
-import { inject, observer } from "mobx-react";
+import { inject } from "mobx-react";
 
+import Container from "../containers/Container";
 import TorrentInfo from "../views/TorrentInfo";
 
 class Torrent extends React.Component {
-  componentDidMount() {
-    this.load(this.id);
+  get torrents() {
+    return this.props.store.torrents;
   }
 
   get id() {
     return this.props.match.params.id;
   }
 
-  get torrents() {
-    return this.props.store.torrents;
-  }
-
-  load(id) {
-    if (!this.torrents.has(id)) {
-      this.torrents.load(id);
-    }
-  }
-
   render() {
-    const torrent = this.torrents.get(this.id);
-    if (!torrent) return null;
-    return <TorrentInfo item={torrent} />;
+    return (
+      <Container store={this.torrents} id={this.id}>
+        {torrent => <TorrentInfo item={torrent} />}
+      </Container>
+    );
   }
 }
 
-export default inject("store")(observer(Torrent));
+export default inject("store")(Torrent);
