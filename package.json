@@ -4,6 +4,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "analyze": "source-map-explorer ./build/static/js/main.*",
     "test": "react-scripts test",
     "lint": "eslint . && prettier --list-different \"./**/*.{js,json,css}\"",
     "format": "eslint --fix . && prettier --write \"./**/*.{js,json,css}\"",
@@ -34,7 +35,8 @@
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.16",
-    "react-transition-group": "^2.2.1"
+    "react-transition-group": "^2.2.1",
+    "source-map-explorer": "^1.5.0"
   },
   "devDependencies": {
     "husky": "^0.14.3",
