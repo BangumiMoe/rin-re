@@ -1,5 +1,5 @@
 {
-  "name": "rin-fe",
+  "name": "rin-re",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
