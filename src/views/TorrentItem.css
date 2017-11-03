@@ -10,10 +10,6 @@
   background-color: rgba(63, 81, 181, 0.05);
 }
 
-.TorrentItem-title {
-  font-weight: 500;
-}
-
 .TorrentItem-info {
   display: flex;
   margin: 0 -0.5rem;
