@@ -7,6 +7,7 @@ import { Paper } from "material-ui";
 import api from "./api";
 import Store from "./stores/Store";
 
+import ScrollManager from "./views/effects/ScrollManager";
 import AppHeader from "./views/AppHeader";
 import AppFooter from "./views/AppFooter";
 import Home from "./pages/Home";
@@ -31,6 +32,7 @@ class App extends React.Component {
             </main>
           </Paper>
           <AppFooter />
+          <ScrollManager />
         </div>
       </Provider>
     );
