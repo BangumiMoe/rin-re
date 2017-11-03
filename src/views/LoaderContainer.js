@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { TransitionGroup } from "react-transition-group";
-import { CircularProgress } from "material-ui";
+import CircularProgress from "material-ui/Progress/CircularProgress";
 
 import Fade from "./transitions/Fade";
 

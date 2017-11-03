@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "mobx-react";
 import { Switch, Route } from "react-router-dom";
 
-import { Paper } from "material-ui";
+import Paper from "material-ui/Paper";
 
 import api from "./api";
 import Store from "./stores/Store";
