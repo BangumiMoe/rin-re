@@ -12,3 +12,7 @@ ReactDOM.render(
   </BrowserRouter>,
   document.querySelector("#root"),
 );
+
+if (process.env.NODE_ENV === "development") {
+  require("./debug");
+}

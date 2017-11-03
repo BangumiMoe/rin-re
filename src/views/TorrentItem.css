@@ -2,14 +2,37 @@
   display: block;
   padding: 0.5rem 2rem;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.8);
+  color: #303f9f;
+  transition: background-color 150ms;
 }
 
 .TorrentItem:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(63, 81, 181, 0.05);
 }
 
 .TorrentItem-title {
-  font-size: 0.875rem;
-  line-height: 2;
+  font-weight: 500;
+}
+
+.TorrentItem-info {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.TorrentItem-meta {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+  color: #7986cb;
+}
+
+.TorrentItem-metaIcon {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  margin-right: 0.25rem;
+  opacity: 0.6;
+}
+
+.TorrentItem-metaText {
+  font-size: 0.75rem;
 }

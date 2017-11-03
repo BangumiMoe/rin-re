@@ -29,10 +29,18 @@ class Paginator extends React.Component {
     return (
       <div className="Paginator">
         <div className="Paginator-buttons">
-          <IconButton disabled={value === 1} onClick={this.handlePrev}>
+          <IconButton
+            aria-label="Newer"
+            disabled={value === 1}
+            onClick={this.handlePrev}
+          >
             <ChevronLeft />
           </IconButton>
-          <IconButton disabled={value === pageCount} onClick={this.handleNext}>
+          <IconButton
+            aria-label="Older"
+            disabled={value === pageCount}
+            onClick={this.handleNext}
+          >
             <ChevronRight />
           </IconButton>
         </div>
