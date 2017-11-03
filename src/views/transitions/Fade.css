@@ -1,7 +1,9 @@
+.Fade-appear,
 .Fade-enter {
   opacity: 0;
 }
 
+.Fade-appear.Fade-appear-active,
 .Fade-enter.Fade-enter-active {
   opacity: 1;
   transition: opacity 300ms;
