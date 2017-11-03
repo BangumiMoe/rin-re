@@ -7,6 +7,7 @@ import Paper from "material-ui/Paper";
 import api from "./api";
 import Store from "./stores/Store";
 
+import Theme from "./Theme";
 import ScrollManager from "./views/effects/ScrollManager";
 import AppHeader from "./views/AppHeader";
 import AppFooter from "./views/AppFooter";
@@ -21,19 +22,21 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={this.store}>
-        <div className="App">
-          <Paper className="App-content">
-            <AppHeader />
-            <main>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/torrent/:id" component={Torrent} />
-              </Switch>
-            </main>
-          </Paper>
-          <AppFooter />
-          <ScrollManager />
-        </div>
+        <Theme>
+          <div className="App">
+            <Paper className="App-content">
+              <AppHeader />
+              <main>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/torrent/:id" component={Torrent} />
+                </Switch>
+              </main>
+            </Paper>
+            <AppFooter />
+            <ScrollManager />
+          </div>
+        </Theme>
       </Provider>
     );
   }

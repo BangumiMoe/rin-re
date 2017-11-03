@@ -2,12 +2,17 @@
   display: block;
   padding: 0.5rem 2rem;
   text-decoration: none;
-  color: #303f9f;
-  transition: background-color 150ms;
+  color: #3f51b5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.TorrentItem:hover {
+.TorrentItem:hover,
+.TorrentItem:active {
   background-color: rgba(63, 81, 181, 0.05);
+}
+
+.TorrentItem-title {
+  color: #1a237e;
 }
 
 .TorrentItem-info {

@@ -6,7 +6,7 @@
 .Fade-appear.Fade-appear-active,
 .Fade-enter.Fade-enter-active {
   opacity: 1;
-  transition: opacity 300ms;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .Fade-exit {
@@ -15,5 +15,5 @@
 
 .Fade-exit.Fade-exit-active {
   opacity: 0;
-  transition: opacity 300ms;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }

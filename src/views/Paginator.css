@@ -1,12 +1,13 @@
 .Paginator {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 0.5rem 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.Paginator-buttons {
-  flex: 1;
+.Paginator-button {
+  min-width: auto !important;
 }
 
 .Paginator-text {
