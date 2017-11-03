@@ -27,7 +27,7 @@ class App extends React.Component {
             <main>
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/torrents/:id" component={Torrent} />
+                <Route path="/torrent/:id" component={Torrent} />
               </Switch>
             </main>
           </Paper>

@@ -12,7 +12,7 @@ class TorrentItem extends React.Component {
   render() {
     const item = this.props.item;
     return (
-      <Link className="TorrentItem" to={`/torrents/${item.id}`}>
+      <Link className="TorrentItem" to={`/torrent/${item.id}`}>
         <div className="TorrentItem-title">{item.title}</div>
       </Link>
     );
