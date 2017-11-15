@@ -1,10 +1,10 @@
 import { types, flow } from "mobx-state-tree";
 
-import fetch from "./utils/fetch";
+import Fetch from "./Fetch";
 import Torrent from "./Torrent";
 
 const TorrentStore = types.compose(
-  fetch(),
+  Fetch,
   types
     .model({
       items: types.optional(types.map(Torrent), {}),

@@ -1,6 +1,6 @@
 import { types, flow } from "mobx-state-tree";
 
-import fetch from "./utils/fetch";
+import Fetch from "./Fetch";
 
 const TorrentItem = types.model({
   id: types.identifier(),
@@ -24,7 +24,7 @@ const TorrentItem = types.model({
 const TorrentPage = types.array(TorrentItem);
 
 const TorrentPaginator = types.compose(
-  fetch(),
+  Fetch,
   types
     .model({
       pageCount: 0,
