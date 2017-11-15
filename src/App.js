@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Paper from "material-ui/Paper";
 
-import api from "./api";
+import http from "./http";
 import Store from "./stores/Store";
 
 import Theme from "./Theme";
@@ -17,7 +17,7 @@ import Torrent from "./pages/Torrent";
 import "./App.css";
 
 class App extends React.Component {
-  store = Store.create({}, { api });
+  store = Store.create({}, { http });
 
   render() {
     return (
