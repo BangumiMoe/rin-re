@@ -35,12 +35,12 @@
     "react-dom": "^16.1.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.17",
-    "react-transition-group": "^2.2.1",
-    "source-map-explorer": "^1.5.0"
+    "react-transition-group": "^2.2.1"
   },
   "devDependencies": {
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
-    "prettier": "^1.8.2"
+    "prettier": "^1.8.2",
+    "source-map-explorer": "^1.5.0"
   }
 }
