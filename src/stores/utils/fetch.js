@@ -1,4 +1,5 @@
 import { types, flow, getEnv } from "mobx-state-tree";
+import uuid from "uuid/v4";
 
 const fetch = () => {
   return types
@@ -9,17 +10,26 @@ const fetch = () => {
       ),
     })
     .actions(self => {
+      let currentId = null;
+
       return {
         fetch: flow(function*(factory) {
           const http = getEnv(self).http;
 
+          const id = uuid();
+          currentId = id;
+
           self.state = "loading";
           try {
             const response = yield factory(http);
-            self.state = "done";
+            if (currentId === id) {
+              self.state = "done";
+            }
             return response.data;
           } catch (error) {
-            self.state = "error";
+            if (currentId === id) {
+              self.state = "error";
+            }
             throw error;
           }
         }),
