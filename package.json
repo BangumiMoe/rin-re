@@ -24,6 +24,7 @@
   "proxy": "https://bangumi.moe",
   "dependencies": {
     "axios": "^0.17.1",
+    "blueimp-md5": "^2.10.0",
     "humps": "^2.0.1",
     "material-ui": "^1.0.0-beta.21",
     "material-ui-icons": "^1.0.0-beta.17",

@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import UserCenter from "./UserCenter";
+
 import "./AppHeader.css";
 
 const AppHeader = () => (
   <header className="AppHeader">
+    <UserCenter />
     <Link className="AppHeader-home" to="/">
       <h1 className="AppHeader-logo">Bangumi Moe</h1>
     </Link>
