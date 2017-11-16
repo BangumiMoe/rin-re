@@ -49,6 +49,7 @@ class LoginDialog extends React.Component {
                 inputRef={node => (this.username = node)}
                 label="Username"
                 margin="dense"
+                autoFocus
               />
             </div>
             <div>
