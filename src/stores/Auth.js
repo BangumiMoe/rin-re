@@ -9,19 +9,26 @@ const Auth = types.compose(
     .model({
       loaded: false,
       currentUser: types.maybe(
-        types.model({
-          id: types.identifier(),
-          username: types.string,
-        }),
+        types
+          .model({
+            id: types.identifier(),
+            username: types.string,
+            emailHash: types.string,
+          })
+          .views(self => ({
+            get avatar() {
+              return `https://static.bangumi.moe/avatar/${self.emailHash}`;
+            },
+          })),
       ),
     })
     .actions(self => ({
       load: flow(function*() {
         const result = yield self.fetch(http => http.get("/api/user/session"));
-        self.loaded = true;
         if (result.id) {
           self.currentUser = result;
         }
+        self.loaded = true;
       }),
 
       login: flow(function*({ username, password }) {

@@ -1,1 +1,53 @@
+.UserCenter {
+  position: relative;
+  height: 5rem;
+}
 
+.UserCenter-layout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.UserCenter-action {
+  position: relative;
+}
+
+.UserCenter-actionLoader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.UserCenter-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+}
+
+.UserCenter-avatar img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.UserCenter-username {
+  margin-right: 0.5rem;
+}

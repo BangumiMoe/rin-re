@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { observer, inject } from "mobx-react";
 
+import CircularProgress from "material-ui/Progress/CircularProgress";
 import Button from "material-ui/Button";
 import TextField from "material-ui/TextField";
 import Dialog, {
@@ -9,6 +10,10 @@ import Dialog, {
   DialogContent,
   DialogActions,
 } from "material-ui/Dialog";
+
+import Fade from "../transitions/Fade";
+
+import "./LoginDialog.css";
 
 class LoginDialog extends React.Component {
   static propTypes = {
@@ -26,22 +31,30 @@ class LoginDialog extends React.Component {
   }
 
   handleRequestClose = () => {
-    if (this.props.onRequestClose) this.props.onRequestClose();
+    if (this.props.onRequestClose) {
+      this.props.onRequestClose();
+    }
   };
 
   handleSubmit = event => {
     event.preventDefault();
 
-    this.auth.login({
-      username: this.username.value,
-      password: this.password.value,
-    });
+    this.auth
+      .login({
+        username: this.username.value,
+        password: this.password.value,
+      })
+      .then(() => {
+        if (this.props.onRequestClose) {
+          this.props.onRequestClose();
+        }
+      });
   };
 
   render() {
     return (
       <Dialog open={this.props.open} onRequestClose={this.handleRequestClose}>
-        <form onSubmit={this.handleSubmit}>
+        <form className="LoginDialog" onSubmit={this.handleSubmit}>
           <DialogTitle>Login</DialogTitle>
           <DialogContent>
             <div>
@@ -63,8 +76,16 @@ class LoginDialog extends React.Component {
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleRequestClose}>Cancel</Button>
-            <Button type="submit">Login</Button>
+            <Button type="submit" disabled={this.auth.state === "loading"}>
+              Login
+            </Button>
           </DialogActions>
+
+          <Fade in={this.auth.state === "loading"} mountOnEnter unmountOnExit>
+            <div className="LoginDialog-loader">
+              <CircularProgress />
+            </div>
+          </Fade>
         </form>
       </Dialog>
     );
