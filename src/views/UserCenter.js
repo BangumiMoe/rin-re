@@ -63,7 +63,6 @@ class UserCenter extends React.Component {
 
   render() {
     const currentUser = this.auth.currentUser;
-    console.log(this.auth.state, this.auth.loaded, currentUser);
     return (
       <TransitionGroup className="UserCenter">
         {this.auth.loaded &&
