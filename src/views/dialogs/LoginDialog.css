@@ -1,5 +1,6 @@
 .LoginDialog {
   position: relative;
+  width: 20rem;
 }
 
 .LoginDialog-loader {

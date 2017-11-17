@@ -38,6 +38,7 @@ const Auth = types.compose(
         if (result.success) {
           self.currentUser = result.user;
         }
+        return result;
       }),
 
       logout: flow(function*() {

@@ -33,7 +33,7 @@ class UserCenter extends React.Component {
     const rect = anchor.getBoundingClientRect();
     this.setState({
       menuOpen: true,
-      menuAnchorPosition: { left: rect.right, top: rect.bottom },
+      menuAnchorPosition: { left: rect.right, top: rect.bottom + 8 },
     });
   };
 
@@ -70,7 +70,7 @@ class UserCenter extends React.Component {
             <Fade key="guest">
               <div className="UserCenter-layout">
                 <div className="UserCenter-action">
-                  <Tooltip title="Login">
+                  <Tooltip title="Login" placement="left">
                     <IconButton
                       color="inherit"
                       aria-label="Login"
@@ -119,13 +119,15 @@ class UserCenter extends React.Component {
                     transformOrigin={{ horizontal: "right", vertical: "top" }}
                     onRequestClose={this.handleMenuRequestClose}
                   >
-                    <MenuItem onClick={this.handleMenuRequestClose}>
+                    <MenuItem dense onClick={this.handleMenuRequestClose}>
                       Publish
                     </MenuItem>
-                    <MenuItem onClick={this.handleMenuRequestClose}>
+                    <MenuItem dense onClick={this.handleMenuRequestClose}>
                       Settings
                     </MenuItem>
-                    <MenuItem onClick={this.handleLogout}>Logout</MenuItem>
+                    <MenuItem dense onClick={this.handleLogout}>
+                      Logout
+                    </MenuItem>
                   </Menu>
                 </div>
                 <div className="UserCenter-username">

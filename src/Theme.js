@@ -38,6 +38,18 @@ const customTheme = createMuiTheme({
         },
       },
     },
+
+    MuiMenuItem: {
+      root: {
+        fontSize: `${14 / 16}rem`,
+        "&:hover": {
+          backgroundColor: fade(theme.palette.text.primary, 0.075),
+        },
+        "&:focus": {
+          backgroundColor: fade(theme.palette.text.primary, 0.075),
+        },
+      },
+    },
   },
 });
 

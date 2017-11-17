@@ -24,11 +24,30 @@ class LoginDialog extends React.Component {
     open: true,
   };
 
-  state = {};
+  state = {
+    loading: false,
+    invalid: false,
+    username: "",
+    password: "",
+  };
 
   get auth() {
     return this.props.store.auth;
   }
+
+  handleUsernameChange = event => {
+    this.setState({
+      invalid: false,
+      username: event.target.value,
+    });
+  };
+
+  handlePasswordChange = event => {
+    this.setState({
+      invalid: false,
+      password: event.target.value,
+    });
+  };
 
   handleRequestClose = () => {
     if (this.props.onRequestClose) {
@@ -36,52 +55,89 @@ class LoginDialog extends React.Component {
     }
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
 
-    this.auth
-      .login({
-        username: this.username.value,
-        password: this.password.value,
-      })
-      .then(() => {
-        if (this.props.onRequestClose) {
-          this.props.onRequestClose();
-        }
+    this.setState({
+      loading: true,
+    });
+
+    const result = await this.auth.login({
+      username: this.state.username,
+      password: this.state.password,
+    });
+
+    if (result.success) {
+      if (this.props.onRequestClose) {
+        this.props.onRequestClose();
+      }
+    } else {
+      this.setState({
+        loading: false,
+        invalid: true,
       });
+    }
+  };
+
+  handleExited = () => {
+    // cleanup
+    this.setState({
+      loading: false,
+      invalid: false,
+      username: "",
+      password: "",
+    });
   };
 
   render() {
     return (
-      <Dialog open={this.props.open} onRequestClose={this.handleRequestClose}>
+      <Dialog
+        open={this.props.open}
+        onRequestClose={this.handleRequestClose}
+        onExited={this.handleExited}
+      >
         <form className="LoginDialog" onSubmit={this.handleSubmit}>
           <DialogTitle>Login</DialogTitle>
+
           <DialogContent>
             <div>
               <TextField
-                inputRef={node => (this.username = node)}
+                value={this.state.username}
+                onChange={this.handleUsernameChange}
                 label="Username"
+                fullWidth
                 margin="dense"
                 autoFocus
+                error={this.state.invalid}
               />
             </div>
             <div>
               <TextField
-                inputRef={node => (this.password = node)}
-                type="password"
+                value={this.state.password}
+                onChange={this.handlePasswordChange}
                 label="Password"
+                type="password"
+                fullWidth
                 margin="dense"
+                error={this.state.invalid}
+                helperText={
+                  this.state.invalid ? "Incorrect username or password." : null
+                }
               />
             </div>
           </DialogContent>
+
           <DialogActions>
             <Button onClick={this.handleRequestClose}>Cancel</Button>
-            <Button type="submit" disabled={this.auth.state === "loading"}>
+            <Button
+              type="submit"
+              disabled={this.state.loading || this.state.invalid}
+            >
               Login
             </Button>
           </DialogActions>
 
-          <Fade in={this.auth.state === "loading"} mountOnEnter unmountOnExit>
+          <Fade in={this.state.loading} mountOnEnter unmountOnExit>
             <div className="LoginDialog-loader">
               <CircularProgress />
             </div>
