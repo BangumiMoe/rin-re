@@ -110,6 +110,7 @@ class AuthDialog extends React.Component {
               <TextField
                 value={this.state.username}
                 onChange={this.handleUsernameChange}
+                id="AuthDialog-username"
                 label="Username"
                 fullWidth
                 margin="dense"
@@ -121,6 +122,7 @@ class AuthDialog extends React.Component {
               <TextField
                 value={this.state.password}
                 onChange={this.handlePasswordChange}
+                id="AuthDialog-password"
                 label="Password"
                 type="password"
                 fullWidth

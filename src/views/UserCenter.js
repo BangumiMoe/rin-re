@@ -92,6 +92,7 @@ class UserCenter extends React.Component {
                     aria-label="User Menu"
                     aria-haspopup="true"
                     aria-owns="UserCenter-menu"
+                    aria-expanded={this.state.menuOpen}
                     disabled={this.auth.state === "loading"}
                     onClick={this.handleActionClick}
                   >

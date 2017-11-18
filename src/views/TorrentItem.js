@@ -7,11 +7,14 @@ import Group from "material-ui-icons/Group";
 
 import "./TorrentItem.css";
 
-const MetaItem = ({ icon: Icon, children }) => (
-  <div className="TorrentItem-meta">
+const MetaItem = ({ icon: Icon, name, children }) => (
+  <p className="TorrentItem-meta">
     {Icon && <Icon className="TorrentItem-metaIcon" />}
-    <div className="TorrentItem-metaText">{children}</div>
-  </div>
+    <span className="TorrentItem-metaText">
+      <span className="TorrentItem-metaName">{name}: </span>
+      {children}
+    </span>
+  </p>
 );
 
 class TorrentItem extends React.Component {
@@ -22,13 +25,21 @@ class TorrentItem extends React.Component {
   render() {
     const item = this.props.item;
     return (
-      <Link className="TorrentItem" to={`/torrent/${item.id}`}>
-        <div className="TorrentItem-title">{item.title}</div>
-        <div className="TorrentItem-info">
-          <MetaItem icon={Person}>{item.uploader.username}</MetaItem>
-          {item.team && <MetaItem icon={Group}>{item.team.name}</MetaItem>}
-        </div>
-      </Link>
+      <article>
+        <Link className="TorrentItem" to={`/torrent/${item.id}`}>
+          <h1 className="TorrentItem-title">{item.title}</h1>
+          <div className="TorrentItem-info">
+            <MetaItem icon={Person} name="Uploader">
+              {item.uploader.username}
+            </MetaItem>
+            {item.team && (
+              <MetaItem icon={Group} name="Team">
+                {item.team.name}
+              </MetaItem>
+            )}
+          </div>
+        </Link>
+      </article>
     );
   }
 }

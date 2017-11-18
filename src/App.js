@@ -24,9 +24,12 @@ class App extends React.Component {
       <Provider store={this.store}>
         <Theme>
           <div className="App">
+            <a className="App-skip" href="#main">
+              Skip to content
+            </a>
             <Paper className="App-content">
               <AppHeader />
-              <main>
+              <main id="main">
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/torrent/:id" component={Torrent} />

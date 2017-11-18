@@ -12,6 +12,9 @@
 }
 
 .TorrentItem-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
   color: #1a237e;
 }
 
@@ -36,4 +39,12 @@
 
 .TorrentItem-metaText {
   font-size: 0.75rem;
+}
+
+.TorrentItem-metaName {
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
 }
