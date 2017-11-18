@@ -62,19 +62,25 @@ class LoginDialog extends React.Component {
       loading: true,
     });
 
-    const result = await this.auth.login({
-      username: this.state.username,
-      password: this.state.password,
-    });
+    try {
+      const result = await this.auth.login({
+        username: this.state.username,
+        password: this.state.password,
+      });
 
-    if (result.success) {
-      if (this.props.onRequestClose) {
-        this.props.onRequestClose();
+      if (result.success) {
+        if (this.props.onRequestClose) {
+          this.props.onRequestClose();
+        }
+      } else {
+        this.setState({
+          loading: false,
+          invalid: true,
+        });
       }
-    } else {
+    } catch (error) {
       this.setState({
         loading: false,
-        invalid: true,
       });
     }
   };
