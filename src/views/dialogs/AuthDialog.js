@@ -13,9 +13,9 @@ import Dialog, {
 
 import Fade from "../transitions/Fade";
 
-import "./LoginDialog.css";
+import "./AuthDialog.css";
 
-class LoginDialog extends React.Component {
+class AuthDialog extends React.Component {
   static propTypes = {
     open: PropTypes.bool,
     onRequestClose: PropTypes.func,
@@ -102,7 +102,7 @@ class LoginDialog extends React.Component {
         onRequestClose={this.handleRequestClose}
         onExited={this.handleExited}
       >
-        <form className="LoginDialog" onSubmit={this.handleSubmit}>
+        <form className="AuthDialog" onSubmit={this.handleSubmit}>
           <DialogTitle>Login</DialogTitle>
 
           <DialogContent>
@@ -144,7 +144,7 @@ class LoginDialog extends React.Component {
           </DialogActions>
 
           <Fade in={this.state.loading} mountOnEnter unmountOnExit>
-            <div className="LoginDialog-loader">
+            <div className="AuthDialog-loader">
               <CircularProgress />
             </div>
           </Fade>
@@ -154,4 +154,4 @@ class LoginDialog extends React.Component {
   }
 }
 
-export default inject("store")(observer(LoginDialog));
+export default inject("store")(observer(AuthDialog));

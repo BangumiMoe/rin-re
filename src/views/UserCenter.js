@@ -10,7 +10,7 @@ import Divider from "material-ui/Divider";
 import Person from "material-ui-icons/Person";
 
 import Fade from "./transitions/Fade";
-import LoginDialog from "./dialogs/LoginDialog";
+import AuthDialog from "./dialogs/AuthDialog";
 
 import "./UserCenter.css";
 
@@ -18,7 +18,7 @@ class UserCenter extends React.Component {
   state = {
     menuOpen: false,
     menuAnchorPosition: null,
-    loginDialogOpen: false,
+    authDialogOpen: false,
   };
 
   componentDidMount() {
@@ -47,13 +47,13 @@ class UserCenter extends React.Component {
 
   handleLogin = () => {
     this.setState({
-      loginDialogOpen: true,
+      authDialogOpen: true,
     });
   };
 
-  handleLoginDialogRequestClose = () => {
+  handleAuthDialogRequestClose = () => {
     this.setState({
-      loginDialogOpen: false,
+      authDialogOpen: false,
     });
   };
 
@@ -141,9 +141,9 @@ class UserCenter extends React.Component {
             </Fade>
           ))}
 
-        <LoginDialog
-          open={this.state.loginDialogOpen}
-          onRequestClose={this.handleLoginDialogRequestClose}
+        <AuthDialog
+          open={this.state.authDialogOpen}
+          onRequestClose={this.handleAuthDialogRequestClose}
         />
       </TransitionGroup>
     );

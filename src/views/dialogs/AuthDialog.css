@@ -1,9 +1,9 @@
-.LoginDialog {
+.AuthDialog {
   position: relative;
   width: 20rem;
 }
 
-.LoginDialog-loader {
+.AuthDialog-loader {
   position: absolute;
   left: 0;
   top: 0;
