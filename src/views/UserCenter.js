@@ -6,6 +6,7 @@ import CircularProgress from "material-ui/Progress/CircularProgress";
 import Tooltip from "material-ui/Tooltip";
 import IconButton from "material-ui/IconButton";
 import Menu, { MenuItem } from "material-ui/Menu";
+import Divider from "material-ui/Divider";
 import Person from "material-ui-icons/Person";
 
 import Fade from "./transitions/Fade";
@@ -122,8 +123,11 @@ class UserCenter extends React.Component {
                     <MenuItem dense onClick={this.handleMenuRequestClose}>
                       Publish
                     </MenuItem>
+                    <div className="UserCenter-menuDivider">
+                      <Divider />
+                    </div>
                     <MenuItem dense onClick={this.handleMenuRequestClose}>
-                      Settings
+                      Profile
                     </MenuItem>
                     <MenuItem dense onClick={this.handleLogout}>
                       Logout
