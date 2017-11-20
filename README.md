@@ -1,5 +1,7 @@
 # rin-re
 
+[![Build Status](https://circleci.com/gh/BangumiMoe/rin-re.svg?style=svg)](https://circleci.com/gh/BangumiMoe/rin-re)
+
 Bangumi Moe - refined.
 
 ## Development
