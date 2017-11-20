@@ -26,3 +26,9 @@ $ npm run format
 ``` shell
 $ npm run analyze
 ```
+
+## Special Thanks
+
+- [OpenCC] - For translating between "zh-Hans" and "zh-Hant".
+
+[OpenCC]: https://github.com/BYVoid/OpenCC
