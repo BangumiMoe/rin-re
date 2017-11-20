@@ -50,6 +50,21 @@ const customTheme = createMuiTheme({
         },
       },
     },
+
+    MuiTooltip: {
+      tooltip: {
+        minHeight: "1.5rem",
+        fontSize: `${12 / 16}rem`,
+        lineHeight: "1.5rem",
+        whiteSpace: "nowrap",
+        backgroundColor: fade("#000", 0.6),
+        [theme.breakpoints.up("sm")]: {
+          minHeight: "1.5rem",
+          fontSize: `${12 / 16}rem`,
+          lineHeight: "1.5rem",
+        },
+      },
+    },
   },
 });
 

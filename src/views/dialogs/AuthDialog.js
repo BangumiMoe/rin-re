@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { observer, inject } from "mobx-react";
+import { translate } from "react-i18next";
 
 import CircularProgress from "material-ui/Progress/CircularProgress";
 import Button from "material-ui/Button";
@@ -96,6 +97,7 @@ class AuthDialog extends React.Component {
   };
 
   render() {
+    const t = this.props.t;
     return (
       <Dialog
         open={this.props.open}
@@ -103,7 +105,7 @@ class AuthDialog extends React.Component {
         onExited={this.handleExited}
       >
         <form className="AuthDialog" onSubmit={this.handleSubmit}>
-          <DialogTitle>Login</DialogTitle>
+          <DialogTitle>{t("Login")}</DialogTitle>
 
           <DialogContent>
             <div>
@@ -111,7 +113,7 @@ class AuthDialog extends React.Component {
                 value={this.state.username}
                 onChange={this.handleUsernameChange}
                 id="AuthDialog-username"
-                label="Username"
+                label={t("Username")}
                 fullWidth
                 margin="dense"
                 autoFocus
@@ -123,25 +125,27 @@ class AuthDialog extends React.Component {
                 value={this.state.password}
                 onChange={this.handlePasswordChange}
                 id="AuthDialog-password"
-                label="Password"
+                label={t("Password")}
                 type="password"
                 fullWidth
                 margin="dense"
                 error={this.state.invalid}
                 helperText={
-                  this.state.invalid ? "Incorrect username or password." : null
+                  this.state.invalid
+                    ? t("Incorrect username or password")
+                    : null
                 }
               />
             </div>
           </DialogContent>
 
           <DialogActions>
-            <Button onClick={this.handleRequestClose}>Cancel</Button>
+            <Button onClick={this.handleRequestClose}>{t("Cancel")}</Button>
             <Button
               type="submit"
               disabled={this.state.loading || this.state.invalid}
             >
-              Login
+              {t("Login")}
             </Button>
           </DialogActions>
 
@@ -156,4 +160,4 @@ class AuthDialog extends React.Component {
   }
 }
 
-export default inject("store")(observer(AuthDialog));
+export default translate()(inject("store")(observer(AuthDialog)));

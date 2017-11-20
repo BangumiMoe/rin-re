@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { translate } from "react-i18next";
 
 import Person from "material-ui-icons/Person";
 import Group from "material-ui-icons/Group";
@@ -23,17 +24,17 @@ class TorrentItem extends React.Component {
   };
 
   render() {
-    const item = this.props.item;
+    const { t, item } = this.props;
     return (
       <article>
         <Link className="TorrentItem" to={`/torrent/${item.id}`}>
           <h1 className="TorrentItem-title">{item.title}</h1>
           <div className="TorrentItem-info">
-            <MetaItem icon={Person} name="Uploader">
+            <MetaItem icon={Person} name={t("Publisher")}>
               {item.uploader.username}
             </MetaItem>
             {item.team && (
-              <MetaItem icon={Group} name="Team">
+              <MetaItem icon={Group} name={t("Team")}>
                 {item.team.name}
               </MetaItem>
             )}
@@ -44,4 +45,4 @@ class TorrentItem extends React.Component {
   }
 }
 
-export default TorrentItem;
+export default translate()(TorrentItem);

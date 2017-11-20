@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { translate } from "react-i18next";
 
 import Button from "material-ui/Button";
 import ChevronLeft from "material-ui-icons/ChevronLeft";
@@ -25,13 +26,13 @@ class Paginator extends React.Component {
   };
 
   render() {
-    const { value, pageCount } = this.props;
+    const { t, value, pageCount } = this.props;
     return (
       <div className="Paginator">
         <Button
           className="Paginator-button"
           disabled={value === 1}
-          aria-label="Newer"
+          aria-label={t("Previous Page")}
           onClick={this.handlePrev}
         >
           <ChevronLeft />
@@ -42,7 +43,7 @@ class Paginator extends React.Component {
         <Button
           className="Paginator-button"
           disabled={value === pageCount}
-          aria-label="Older"
+          aria-label={t("Next Page")}
           onClick={this.handleNext}
         >
           <ChevronRight />
@@ -52,4 +53,4 @@ class Paginator extends React.Component {
   }
 }
 
-export default Paginator;
+export default translate()(Paginator);

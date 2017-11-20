@@ -1,5 +1,6 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
+import { translate } from "react-i18next";
 
 import { TransitionGroup } from "react-transition-group";
 import CircularProgress from "material-ui/Progress/CircularProgress";
@@ -62,6 +63,7 @@ class UserCenter extends React.Component {
   };
 
   render() {
+    const t = this.props.t;
     const currentUser = this.auth.currentUser;
     return (
       <TransitionGroup className="UserCenter">
@@ -70,10 +72,10 @@ class UserCenter extends React.Component {
             <Fade key="guest">
               <div className="UserCenter-layout">
                 <div className="UserCenter-action">
-                  <Tooltip title="Login" placement="left">
+                  <Tooltip title={t("Login")} placement="left">
                     <IconButton
                       color="inherit"
-                      aria-label="Login"
+                      aria-label={t("Login")}
                       onClick={this.handleLogin}
                     >
                       <Person />
@@ -88,7 +90,7 @@ class UserCenter extends React.Component {
                 <div className="UserCenter-action">
                   <IconButton
                     color="inherit"
-                    aria-label="User Menu"
+                    aria-label={t("User Menu")}
                     aria-haspopup="true"
                     aria-owns="UserCenter-menu"
                     aria-expanded={this.state.menuOpen}
@@ -96,7 +98,7 @@ class UserCenter extends React.Component {
                     onClick={this.handleActionClick}
                   >
                     <div className="UserCenter-avatar">
-                      <img src={currentUser.avatar} alt="User Avatar" />
+                      <img src={currentUser.avatar} alt={t("User Avatar")} />
                     </div>
                   </IconButton>
                   <Fade
@@ -121,13 +123,13 @@ class UserCenter extends React.Component {
                     onRequestClose={this.handleMenuRequestClose}
                   >
                     <MenuItem dense onClick={this.handleMenuRequestClose}>
-                      Profile
+                      {t("Profile")}
                     </MenuItem>
                     <MenuItem dense onClick={this.handleMenuRequestClose}>
-                      Publish
+                      {t("Publish Torrent")}
                     </MenuItem>
                     <MenuItem dense onClick={this.handleLogout}>
-                      Logout
+                      {t("Logout")}
                     </MenuItem>
                   </Menu>
                 </div>
@@ -147,4 +149,4 @@ class UserCenter extends React.Component {
   }
 }
 
-export default inject("store")(observer(UserCenter));
+export default translate()(inject("store")(observer(UserCenter)));
