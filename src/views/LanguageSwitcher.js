@@ -9,7 +9,7 @@ import Language from "material-ui-icons/Language";
 import "./LanguageSwitcher.css";
 
 const LANGUAGES = [
-  { language: "en", text: "Language" },
+  { language: "en", text: "English" },
   { language: "zh-Hans", text: "简体中文" },
 ];
 
