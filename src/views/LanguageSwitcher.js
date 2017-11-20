@@ -11,6 +11,7 @@ import "./LanguageSwitcher.css";
 const LANGUAGES = [
   { language: "en", text: "English" },
   { language: "zh-Hans", text: "简体中文" },
+  { language: "zh-Hant", text: "繁體中文" },
 ];
 
 class LanguageSwitcher extends React.Component {

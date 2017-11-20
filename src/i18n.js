@@ -15,7 +15,10 @@ req.keys().forEach(file => {
 i18n.use(LanguageDetecter).init({
   debug: process.env.NODE_ENV !== "production",
 
-  fallbackLng: "en",
+  fallbackLng: {
+    "zh-CN": ["zh-Hans", "en"],
+    default: ["en"],
+  },
 
   interpolation: {
     escapeValue: false,

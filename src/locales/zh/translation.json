@@ -1,26 +1,26 @@
 {
-  "Bangumi Moe": "萌番组",
+  "Bangumi Moe": "萌番組",
 
-  "Language": "语言",
-  "Change Language": "切换语言",
+  "Language": "語言",
+  "Change Language": "切換語言",
 
   "Cancel": "取消",
 
-  "Previous Page": "上一页",
-  "Next Page": "下一页",
+  "Previous Page": "上一頁",
+  "Next Page": "下一頁",
 
-  "User Avatar": "用户头像",
-  "User Menu": "用户菜单",
-  "Login": "登录",
+  "User Avatar": "用戶頭像",
+  "User Menu": "用戶菜單",
+  "Login": "登錄",
   "Logout": "登出",
-  "Profile": "个人信息",
-  "Publish Torrent": "发布种子",
+  "Profile": "個人信息",
+  "Publish Torrent": "發佈種子",
 
-  "Username": "用户名",
-  "Password": "密码",
+  "Username": "用戶名",
+  "Password": "密碼",
 
-  "Incorrect username or password": "用户名或密码错误",
+  "Incorrect username or password": "用戶名或密碼錯誤",
 
-  "Publisher": "发布者",
-  "Team": "团队"
+  "Publisher": "發佈者",
+  "Team": "團隊"
 }
