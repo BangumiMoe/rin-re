@@ -1,16 +1,17 @@
 import React from "react";
+import { translate } from "react-i18next";
 
 import LanguageSwitcher from "./LanguageSwitcher";
 
 import "./AppFooter.css";
 
-const AppFooter = () => (
+const AppFooter = ({ t }) => (
   <footer className="AppFooter">
-    <p>Copyright &copy; 2015-2017 Bangumi Moe. All rights reserved.</p>
+    <p>{t("Copyright")}</p>
     <p>
       <LanguageSwitcher />
     </p>
   </footer>
 );
 
-export default AppFooter;
+export default translate()(AppFooter);
