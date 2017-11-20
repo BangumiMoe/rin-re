@@ -9,7 +9,7 @@ import Group from "material-ui-icons/Group";
 import "./TorrentItem.css";
 
 const MetaItem = ({ icon: Icon, name, children }) => (
-  <p className="TorrentItem-meta">
+  <p className="TorrentItem-meta" title={name}>
     {Icon && <Icon className="TorrentItem-metaIcon" />}
     <span className="TorrentItem-metaText">
       <span className="TorrentItem-metaName">{name}: </span>
