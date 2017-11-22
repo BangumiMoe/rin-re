@@ -8,14 +8,14 @@
 
 .TorrentItem:hover,
 .TorrentItem:active {
-  background-color: rgba(63, 81, 181, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .TorrentItem-title {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
-  color: #1a237e;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .TorrentItem-info {
@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   margin: 0 0.5rem;
-  color: #7986cb;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .TorrentItem-metaIcon {
