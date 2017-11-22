@@ -16,25 +16,13 @@ const customTheme = createMuiTheme({
     MuiButton: {
       root: {
         "&:hover": {
-          backgroundColor: fade(theme.palette.text.primary, 0.075),
+          backgroundColor: fade(theme.palette.text.primary, 0.05),
           "@media (hover: none)": {
-            backgroundColor: fade(theme.palette.text.primary, 0.075),
+            backgroundColor: fade(theme.palette.text.primary, 0.05),
           },
         },
         "&:active": {
-          backgroundColor: fade(theme.palette.text.primary, 0.075),
-        },
-      },
-
-      flatPrimary: {
-        "&:hover": {
-          backgroundColor: fade(theme.palette.primary[500], 0.05),
-          "@media (hover: none)": {
-            backgroundColor: fade(theme.palette.primary[500], 0.05),
-          },
-        },
-        "&:active": {
-          backgroundColor: fade(theme.palette.primary[500], 0.05),
+          backgroundColor: fade(theme.palette.text.primary, 0.05),
         },
       },
     },
@@ -42,40 +30,16 @@ const customTheme = createMuiTheme({
     MuiListItem: {
       button: {
         "&:hover": {
-          backgroundColor: fade(theme.palette.text.primary, 0.075),
+          backgroundColor: fade(theme.palette.text.primary, 0.05),
           "@media (hover: none)": {
-            backgroundColor: fade(theme.palette.text.primary, 0.075),
+            backgroundColor: fade(theme.palette.text.primary, 0.05),
           },
         },
-        "&:focus": {
-          backgroundColor: fade(theme.palette.text.primary, 0.075),
-        },
-      },
-    },
-
-    MuiMenuItem: {
-      root: {
-        fontSize: `${14 / 16}rem`,
-        "&:hover": {
-          backgroundColor: fade(theme.palette.text.primary, 0.075),
+        "&:active": {
+          backgroundColor: fade(theme.palette.text.primary, 0.05),
         },
         "&:focus": {
-          backgroundColor: fade(theme.palette.text.primary, 0.075),
-        },
-      },
-    },
-
-    MuiTooltip: {
-      tooltip: {
-        minHeight: "1.5rem",
-        fontSize: `${12 / 16}rem`,
-        lineHeight: "1.5rem",
-        whiteSpace: "nowrap",
-        backgroundColor: fade("#000", 0.6),
-        [theme.breakpoints.up("sm")]: {
-          minHeight: "1.5rem",
-          fontSize: `${12 / 16}rem`,
-          lineHeight: "1.5rem",
+          backgroundColor: fade(theme.palette.text.primary, 0.05),
         },
       },
     },

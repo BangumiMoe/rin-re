@@ -1,24 +1,17 @@
-.App {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.App-content {
-  overflow: hidden;
-  margin: 2rem;
-}
-
 .App-skip {
   position: absolute;
   left: 0;
   top: 0;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: #3f51b5;
+  color: #fff;
   clip: rect(0, 0, 0, 0);
 }
 
 .App-skip:focus {
   clip: auto;
+}
+
+.App-content {
+  min-height: 100vh;
 }

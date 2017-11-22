@@ -3,8 +3,6 @@ import { Provider } from "mobx-react";
 import { Switch, Route } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 
-import Paper from "material-ui/Paper";
-
 import http from "./http";
 import Store from "./stores/Store";
 
@@ -31,15 +29,13 @@ class App extends React.Component {
               <a className="App-skip" href="#main">
                 Skip to content
               </a>
-              <Paper className="App-content">
-                <AppHeader />
-                <main id="main">
-                  <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/torrent/:id" component={Torrent} />
-                  </Switch>
-                </main>
-              </Paper>
+              <AppHeader />
+              <main id="main" className="App-content">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/torrent/:id" component={Torrent} />
+                </Switch>
+              </main>
               <AppFooter />
               <ScrollManager />
             </div>

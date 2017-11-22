@@ -12,7 +12,9 @@ class TorrentInfo extends React.Component {
     const item = this.props.item;
     return (
       <article className="TorrentInfo">
-        <h1 className="TorrentInfo-title">{item.title}</h1>
+        <header className="TorrentInfo-header">
+          <h1 className="TorrentInfo-title">{item.title}</h1>
+        </header>
       </article>
     );
   }

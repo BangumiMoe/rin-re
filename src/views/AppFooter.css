@@ -1,11 +1,13 @@
 .AppFooter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  z-index: 10;
+  padding: 3rem 4rem;
+  color: rgba(0, 0, 0, 0.4);
+  background-color: #fafafa;
 }
 
 .AppFooter p {
-  margin: 0 0.5rem;
+  margin: 0;
   font-size: 0.75rem;
-  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
 }
