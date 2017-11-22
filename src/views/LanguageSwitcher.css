@@ -1,3 +1,7 @@
+.LanguageSwitcher {
+  display: block !important;
+}
+
 .LanguageSwitcher-list {
   width: 15rem;
 }

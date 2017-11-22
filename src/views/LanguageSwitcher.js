@@ -41,7 +41,13 @@ class LanguageSwitcher extends React.Component {
   render() {
     const t = this.props.t;
     return [
-      <IconButton key="button" color="inherit" onClick={this.handleClick}>
+      <IconButton
+        key="button"
+        className="LanguageSwitcher"
+        color="inherit"
+        aria-label={t("Change Language")}
+        onClick={this.handleClick}
+      >
         <Language />
       </IconButton>,
 
