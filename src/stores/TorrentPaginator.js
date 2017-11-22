@@ -5,6 +5,7 @@ import Fetch from "./Fetch";
 const TorrentItem = types.model({
   id: types.identifier(),
   title: types.string,
+  publishTime: types.string,
   uploader: types.model({
     id: types.identifier(),
     username: types.string,

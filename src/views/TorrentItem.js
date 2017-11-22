@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { translate } from "react-i18next";
 
+import format from "date-fns/format";
+
 import Person from "material-ui-icons/Person";
 import Group from "material-ui-icons/Group";
 
@@ -30,6 +32,9 @@ class TorrentItem extends React.Component {
         <Link className="TorrentItem" to={`/torrent/${item.id}`}>
           <h1 className="TorrentItem-title">{item.title}</h1>
           <div className="TorrentItem-info">
+            <MetaItem name={t("Publish Time")}>
+              {format(item.publishTime, "YYYY-MM-DD")}
+            </MetaItem>
             <MetaItem icon={Person} name={t("Publisher")}>
               {item.uploader.username}
             </MetaItem>

@@ -25,6 +25,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "blueimp-md5": "^2.10.0",
+    "date-fns": "^1.29.0",
     "humps": "^2.0.1",
     "i18next": "^10.0.7",
     "i18next-browser-languagedetector": "^2.1.0",
