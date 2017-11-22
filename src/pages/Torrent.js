@@ -4,8 +4,6 @@ import { inject } from "mobx-react";
 import Container from "../containers/Container";
 import TorrentInfo from "../views/TorrentInfo";
 
-import "./Torrent.css";
-
 class Torrent extends React.Component {
   get torrents() {
     return this.props.store.torrents;

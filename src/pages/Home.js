@@ -4,6 +4,8 @@ import { inject } from "mobx-react";
 import PaginatorContainer from "../containers/PaginatorContainer";
 import TorrentList from "../views/TorrentList";
 
+import "./Home.css";
+
 class Home extends React.Component {
   get paginator() {
     return this.props.store.torrentPaginator;
@@ -20,13 +22,15 @@ class Home extends React.Component {
 
   render() {
     return (
-      <PaginatorContainer
-        store={this.paginator}
-        page={this.page}
-        onPageChange={this.handlePageChange}
-      >
-        {torrents => <TorrentList list={torrents} />}
-      </PaginatorContainer>
+      <div className="Home">
+        <PaginatorContainer
+          store={this.paginator}
+          page={this.page}
+          onPageChange={this.handlePageChange}
+        >
+          {torrents => <TorrentList list={torrents} />}
+        </PaginatorContainer>
+      </div>
     );
   }
 }
