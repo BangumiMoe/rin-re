@@ -10,19 +10,23 @@ import "./AppHeader.css";
 
 const AppHeader = ({ t }) => (
   <header className="AppHeader">
-    <ButtonBase
-      ripple={{ center: true }}
-      component={Link}
-      className="AppHeader-home"
-      to="/"
-    >
-      <h1 className="AppHeader-logo">{t("Bangumi Moe")}</h1>
-    </ButtonBase>
-    <div className="AppHeader-side">
-      <LanguageSwitcher />
+    <div className="AppHeader-main">
+      <ButtonBase
+        ripple={{ center: true }}
+        component={Link}
+        className="AppHeader-home"
+        to="/"
+      >
+        <h1 className="AppHeader-logo">{t("Bangumi Moe")}</h1>
+      </ButtonBase>
     </div>
     <div className="AppHeader-side">
-      <UserCenter />
+      <div className="AppHeader-sideItem">
+        <LanguageSwitcher />
+      </div>
+      <div className="AppHeader-sideItem">
+        <UserCenter />
+      </div>
     </div>
   </header>
 );

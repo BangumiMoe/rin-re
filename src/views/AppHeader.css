@@ -10,15 +10,21 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.AppHeader-main {
+  flex: 1;
+  margin-right: 4rem;
+}
+
 .AppHeader-home {
-  margin-right: auto;
+  margin: -1rem -2rem;
+  padding: 1rem 2rem;
   text-decoration: none;
   color: inherit;
 }
 
 .AppHeader-home .Ripple-ripple {
-  min-width: 16rem;
-  min-height: 16rem;
+  width: 16rem !important;
+  height: 16rem !important;
 }
 
 .AppHeader-logo {
@@ -41,5 +47,9 @@
 .AppHeader-side {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  margin: 0 -0.5rem;
+}
+
+.AppHeader-sideItem {
+  margin: 0 0.5rem;
 }

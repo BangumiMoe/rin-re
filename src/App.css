@@ -1,5 +1,6 @@
 .App-skip {
   position: absolute;
+  z-index: 100;
   left: 0;
   top: 0;
   padding: 0.5rem 1rem;

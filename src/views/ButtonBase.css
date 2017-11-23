@@ -1,4 +1,9 @@
 .ButtonBase {
   position: relative;
   display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ButtonBase:focus {
+  outline: none;
 }
