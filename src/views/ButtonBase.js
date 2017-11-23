@@ -28,8 +28,6 @@ class ButtonBase extends React.Component {
     RELEASE_EVENTS.forEach(event =>
       root.addEventListener(event, this.handleRelease, { passive: true }),
     );
-    root.addEventListener("keydown", this.handleKeyDown, { passive: true });
-    root.addEventListener("keyup", this.handleKeyUp, { passive: true });
   }
 
   componentWillUnmount() {
@@ -43,8 +41,6 @@ class ButtonBase extends React.Component {
     RELEASE_EVENTS.forEach(event =>
       root.removeEventListener(event, this.handleRelease, { passive: true }),
     );
-    root.removeEventListener("keydown", this.handleKeyDown, { passive: true });
-    root.removeEventListener("keyup", this.handleKeyUp, { passive: true });
   }
 
   handlePress = event => {
@@ -60,7 +56,7 @@ class ButtonBase extends React.Component {
       this.timer = setTimeout(() => {
         this.timerHandler();
         this.timerHandler = null;
-      }, 100);
+      }, 80);
     } else if (event.buttons === 1) {
       this.ripple.press(point);
     }
@@ -79,10 +75,6 @@ class ButtonBase extends React.Component {
       this.ripple.release();
     });
   };
-
-  handleKeyDown = () => {};
-
-  handleKeyUp = () => {};
 
   render() {
     const {
