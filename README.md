@@ -4,31 +4,32 @@ Bangumi Moe - refined.
 
 ## Development
 
-``` shell
+```shell
+$ npm install
 $ npm run dev # 127.0.0.1:3000
 ```
 
 ### Build
 
-``` shell
+```shell
 $ npm run build
 ```
 
 ### Lint / Format
 
-``` shell
+```shell
 $ npm run lint
 $ npm run format
 ```
 
 ### Analyze
 
-``` shell
+```shell
 $ npm run analyze
 ```
 
 ## Special Thanks
 
-- [OpenCC] - For translating between "zh-Hans" and "zh-Hant".
+* [OpenCC] - For translating between "zh-Hans" and "zh-Hant".
 
-[OpenCC]: https://github.com/BYVoid/OpenCC
+[opencc]: https://github.com/BYVoid/OpenCC
