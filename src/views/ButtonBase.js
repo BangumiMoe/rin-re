@@ -17,6 +17,7 @@ class ButtonBase extends React.Component {
 
   componentDidMount() {
     const root = ReactDOM.findDOMNode(this);
+    root.setAttribute("touch-action", "auto");
     PRESS_EVENTS.forEach(event =>
       root.addEventListener(event, this.handlePress, { passive: true }),
     );
