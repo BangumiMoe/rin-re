@@ -22,11 +22,6 @@
   color: inherit;
 }
 
-.AppHeader-home .Ripple-ripple {
-  width: 16rem !important;
-  height: 16rem !important;
-}
-
 .AppHeader-logo {
   position: relative;
   margin: 0;
