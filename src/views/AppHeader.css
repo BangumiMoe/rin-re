@@ -16,10 +16,14 @@
 }
 
 .AppHeader-home {
+  overflow: visible;
   margin: -1rem -2rem;
   padding: 1rem 2rem;
-  text-decoration: none;
-  color: inherit;
+}
+
+.AppHeader-home .Ripple-ripple {
+  width: 24rem !important;
+  height: 24rem !important;
 }
 
 .AppHeader-logo {

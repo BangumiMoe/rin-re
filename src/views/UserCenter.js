@@ -2,13 +2,13 @@ import React from "react";
 import { observer, inject } from "mobx-react";
 import { translate } from "react-i18next";
 
+import Person from "react-icons/lib/md/person";
 import { TransitionGroup } from "react-transition-group";
 import CircularProgress from "material-ui/Progress/CircularProgress";
-import IconButton from "material-ui/IconButton";
 import Menu, { MenuItem } from "material-ui/Menu";
-import Person from "material-ui-icons/Person";
 
 import Fade from "./transitions/Fade";
+import IconButton from "./IconButton";
 import AuthDialog from "./dialogs/AuthDialog";
 
 import "./UserCenter.css";
@@ -76,7 +76,6 @@ class UserCenter extends React.Component {
                 <div>
                   <IconButton
                     className="UserCenter-action"
-                    color="inherit"
                     aria-label={t("Login")}
                     onClick={this.handleLogin}
                   >
@@ -89,7 +88,6 @@ class UserCenter extends React.Component {
                 <div>
                   <IconButton
                     className="UserCenter-action"
-                    color="inherit"
                     aria-label={t("User Menu")}
                     aria-haspopup="true"
                     aria-owns="UserCenter-menu"

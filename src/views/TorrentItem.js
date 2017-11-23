@@ -5,8 +5,8 @@ import { translate } from "react-i18next";
 
 import format from "date-fns/format";
 
-import Person from "material-ui-icons/Person";
-import Group from "material-ui-icons/Group";
+import Person from "react-icons/lib/md/person";
+import Group from "react-icons/lib/md/group";
 
 import ButtonBase from "./ButtonBase";
 

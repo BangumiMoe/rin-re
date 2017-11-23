@@ -7,7 +7,7 @@
 }
 
 .Paginator-button {
-  min-width: auto !important;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .Paginator-text {

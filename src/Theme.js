@@ -13,20 +13,6 @@ const customTheme = createMuiTheme({
       },
     },
 
-    MuiButton: {
-      root: {
-        "&:hover": {
-          backgroundColor: fade(theme.palette.text.primary, 0.05),
-          "@media (hover: none)": {
-            backgroundColor: fade(theme.palette.text.primary, 0.05),
-          },
-        },
-        "&:active": {
-          backgroundColor: fade(theme.palette.text.primary, 0.05),
-        },
-      },
-    },
-
     MuiListItem: {
       button: {
         "&:hover": {

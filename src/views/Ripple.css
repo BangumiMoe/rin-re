@@ -19,7 +19,7 @@
 
 .Ripple-item {
   position: absolute;
-  transition: opacity 1000ms;
+  transition: opacity 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: Ripple 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-fill-mode: both;
 }

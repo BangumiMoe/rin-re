@@ -1,10 +1,11 @@
 import React from "react";
 import { translate } from "react-i18next";
 
-import IconButton from "material-ui/IconButton";
+import Language from "react-icons/lib/md/language";
 import List, { ListItem } from "material-ui/List";
 import Dialog, { DialogTitle } from "material-ui/Dialog";
-import Language from "material-ui-icons/Language";
+
+import IconButton from "./IconButton";
 
 import "./LanguageSwitcher.css";
 
@@ -44,7 +45,6 @@ class LanguageSwitcher extends React.Component {
       <IconButton
         key="button"
         className="LanguageSwitcher"
-        color="inherit"
         aria-label={t("Change Language")}
         onClick={this.handleClick}
       >

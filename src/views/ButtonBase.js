@@ -12,7 +12,7 @@ const RELEASE_EVENTS = ["pointerup", "pointerleave", "pointercancel"];
 class ButtonBase extends React.Component {
   static propTypes = {};
   static defaultProps = {
-    component: "span",
+    component: "button",
   };
 
   timerHandler = null;

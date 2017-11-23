@@ -2,9 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { translate } from "react-i18next";
 
-import IconButton from "material-ui/IconButton";
-import ChevronLeft from "material-ui-icons/ChevronLeft";
-import ChevronRight from "material-ui-icons/ChevronRight";
+import ChevronLeft from "react-icons/lib/md/chevron-left";
+import ChevronRight from "react-icons/lib/md/chevron-right";
+
+import IconButton from "./IconButton";
 
 import "./Paginator.css";
 

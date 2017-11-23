@@ -1,9 +1,25 @@
 .ButtonBase {
   position: relative;
+  overflow: hidden;
   display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  appearance: none;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
+  transition: opacity 250ms;
 }
 
-.ButtonBase:focus {
-  outline: none;
+.ButtonBase:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
 }
