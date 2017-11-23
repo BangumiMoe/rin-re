@@ -1,0 +1,42 @@
+.RichText {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.RichText h1,
+.RichText h2,
+.RichText h3,
+.RichText h4,
+.RichText h5,
+.RichText h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.RichText h1 + h2,
+.RichText h2 + h3,
+.RichText h3 + h4,
+.RichText h4 + h5,
+.RichText h5 + h6 {
+  margin-top: 0.75rem;
+}
+
+.RichText p {
+  margin: 0.75rem 0;
+}
+
+.RichText a {
+  display: inline-block;
+}
+
+.RichText img {
+  max-width: 100%;
+  height: auto !important;
+  vertical-align: bottom;
+}
+
+.RichText hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
