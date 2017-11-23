@@ -19,6 +19,10 @@ class PaginatorContainer extends React.Component {
     transition: true,
   };
 
+  shouldComponentUpdate(nextProps) {
+    return this.props.page !== nextProps.page;
+  }
+
   render() {
     const store = this.props.store;
     return (

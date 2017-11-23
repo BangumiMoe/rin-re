@@ -33,6 +33,10 @@ class Container extends React.Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    return this.props.id !== nextProps.id;
+  }
+
   load(id) {
     const store = this.props.store;
     if (!store.has(id)) {

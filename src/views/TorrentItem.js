@@ -8,6 +8,8 @@ import format from "date-fns/format";
 import Person from "material-ui-icons/Person";
 import Group from "material-ui-icons/Group";
 
+import ButtonBase from "./ButtonBase";
+
 import "./TorrentItem.css";
 
 const MetaItem = ({ icon: Icon, name, children }) => (
@@ -29,7 +31,11 @@ class TorrentItem extends React.Component {
     const { t, item } = this.props;
     return (
       <article>
-        <Link className="TorrentItem" to={`/torrent/${item.id}`}>
+        <ButtonBase
+          component={Link}
+          className="TorrentItem"
+          to={`/torrent/${item.id}`}
+        >
           <h1 className="TorrentItem-title">{item.title}</h1>
           <div className="TorrentItem-info">
             <MetaItem name={t("Publish Time")}>
@@ -44,7 +50,7 @@ class TorrentItem extends React.Component {
               </MetaItem>
             )}
           </div>
-        </Link>
+        </ButtonBase>
       </article>
     );
   }

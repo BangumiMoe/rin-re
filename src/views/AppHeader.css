@@ -1,6 +1,7 @@
 .AppHeader {
   position: relative;
   z-index: 10;
+  overflow: hidden;
   display: flex;
   align-items: center;
   padding: 4rem;
@@ -10,9 +11,14 @@
 }
 
 .AppHeader-home {
-  flex: 1;
+  margin-right: auto;
   text-decoration: none;
   color: inherit;
+}
+
+.AppHeader-home .Ripple-ripple {
+  min-width: 16rem;
+  min-height: 16rem;
 }
 
 .AppHeader-logo {

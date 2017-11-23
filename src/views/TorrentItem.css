@@ -1,21 +1,26 @@
 .TorrentItem {
+  overflow: hidden;
   display: block;
   padding: 0.75rem 4rem;
   text-decoration: none;
-  color: #3f51b5;
+  color: rgba(0, 0, 0, 0.8);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .TorrentItem:hover,
 .TorrentItem:active {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.025);
+}
+
+.TorrentItem .Ripple-ripple {
+  max-width: 16rem;
+  max-height: 16rem;
 }
 
 .TorrentItem-title {
   margin: 0;
   font-size: 0.875rem;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.8);
 }
 
 .TorrentItem-info {
