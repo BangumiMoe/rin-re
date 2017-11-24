@@ -25,6 +25,40 @@
   margin: 0.75rem 0;
 }
 
+.RichText ul,
+.RichText ol {
+  margin: 0.75rem 0;
+  padding-left: 2rem;
+}
+
+.RichText ul {
+  list-style: square;
+}
+
+.RichText li {
+  margin: 0.25rem 0;
+}
+
+.RichText blockquote {
+  position: relative;
+  margin: 0.75rem 0;
+  padding-left: 2rem;
+}
+
+.RichText blockquote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-left: 4px solid rgba(0, 0, 0, 0.1);
+}
+
+.RichText pre {
+  padding: 0.75rem 2rem;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .RichText a {
   display: inline-block;
 }
