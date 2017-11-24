@@ -1,0 +1,28 @@
+.FileTree-tree {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.FileTree-tree .FileTree-tree {
+  margin-left: 1.5rem;
+}
+
+.FileTree-item {
+  display: flex;
+  align-items: center;
+  margin: 0.25rem 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.FileTree-itemIcon {
+  margin-right: 0.5rem;
+}
+
+.FileTree-itemName {
+  overflow: hidden;
+  flex: 1;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -10,11 +10,14 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
+.TorrentInfo-content {
+  overflow: auto;
+  max-height: 15rem;
+  padding: 1rem 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .TorrentInfo-introduction {
   overflow: hidden;
   padding: 0 4rem;
-}
-
-.TorrentInfo-introduction .RichText {
-  margin: 2rem 0;
 }
