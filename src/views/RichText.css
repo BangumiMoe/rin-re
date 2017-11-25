@@ -74,7 +74,6 @@
 .RichText img {
   max-width: 100%;
   height: auto !important;
-  vertical-align: bottom;
 }
 
 .RichText hr {

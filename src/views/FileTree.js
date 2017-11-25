@@ -16,6 +16,7 @@ const getChildren = content => {
           return {
             type: "file",
             name: prefix,
+            size: children[0].size,
           };
         } else {
           return {
@@ -42,6 +43,7 @@ const Tree = ({ content }) => (
             <div className="FileTree-item" title={child.name}>
               <File className="FileTree-itemIcon" />
               <span className="FileTree-itemName">{child.name}</span>
+              <span className="FileTree-itemSize">{child.size}</span>
             </div>
           </li>
         ) : (
@@ -49,6 +51,7 @@ const Tree = ({ content }) => (
             <div className="FileTree-item" title={child.name}>
               <Folder className="FileTree-itemIcon" />
               <span className="FileTree-itemName">{child.name}</span>
+              <span className="FileTree-itemSize">-</span>
             </div>
             <Tree content={child.children} />
           </li>
