@@ -16,8 +16,10 @@ i18n.use(LanguageDetecter).init({
   debug: process.env.NODE_ENV !== "production",
 
   fallbackLng: {
-    "zh-CN": ["zh-Hans", "en"],
     default: ["en"],
+    "zh-CN": ["zh-Hans", "en"],
+    "zh-HK": ["zh-Hant", "en"],
+    "zh-TW": ["zh-Hant", "en"],
   },
 
   interpolation: {
