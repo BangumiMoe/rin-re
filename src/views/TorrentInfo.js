@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Helmet from "react-helmet";
 
 import RichText from "./RichText";
 import FileTree from "./FileTree";
@@ -15,6 +16,7 @@ class TorrentInfo extends React.Component {
     const item = this.props.item;
     return (
       <article className="TorrentInfo">
+        <Helmet title={item.title} />
         <header className="TorrentInfo-header">
           <h1 className="TorrentInfo-title">{item.title}</h1>
         </header>

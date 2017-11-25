@@ -1,5 +1,7 @@
 import React from "react";
 import { inject } from "mobx-react";
+import { translate } from "react-i18next";
+import Helmet from "react-helmet";
 
 import Container from "../containers/Container";
 import TorrentInfo from "../views/TorrentInfo";
@@ -14,8 +16,10 @@ class Torrent extends React.Component {
   }
 
   render() {
+    const t = this.props.t;
     return (
       <div className="Torrent">
+        <Helmet title={t("Torrent")} />
         <Container store={this.torrents} id={this.id}>
           {torrent => <TorrentInfo item={torrent} />}
         </Container>
@@ -24,4 +28,4 @@ class Torrent extends React.Component {
   }
 }
 
-export default inject("store")(Torrent);
+export default translate()(inject("store")(Torrent));

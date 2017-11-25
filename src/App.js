@@ -1,7 +1,8 @@
 import React from "react";
 import { Provider } from "mobx-react";
 import { Switch, Route } from "react-router-dom";
-import { I18nextProvider } from "react-i18next";
+import { I18nextProvider, I18n } from "react-i18next";
+import Helmet from "react-helmet";
 
 import http from "./http";
 import Store from "./stores/Store";
@@ -26,6 +27,14 @@ class App extends React.Component {
         <Provider store={this.store}>
           <Theme>
             <div className="App">
+              <I18n>
+                {t => (
+                  <Helmet
+                    defaultTitle={t("Bangumi Moe")}
+                    titleTemplate={`%s - ${t("Bangumi Moe")}`}
+                  />
+                )}
+              </I18n>
               <a className="App-skip" href="#main">
                 Skip to content
               </a>
