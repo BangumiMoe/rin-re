@@ -35,9 +35,7 @@ class App extends React.Component {
                   />
                 )}
               </I18n>
-              <a className="App-skip" href="#main">
-                Skip to content
-              </a>
+
               <AppHeader />
               <main id="main" className="App-content">
                 <Switch>
@@ -46,6 +44,7 @@ class App extends React.Component {
                 </Switch>
               </main>
               <AppFooter />
+
               <ScrollManager />
             </div>
           </Theme>
