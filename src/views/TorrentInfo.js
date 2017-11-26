@@ -1,10 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { translate } from "react-i18next";
 import Helmet from "react-helmet";
 
+import FileDownload from "react-icons/lib/md/file-download";
+
+import * as link from "../utils/link";
+
 import RichText from "./RichText";
+import Button from "./Button";
 import FileTree from "./FileTree";
 import TagList from "./TagList";
+import TorrentMeta from "./TorrentMeta";
 
 import "./TorrentInfo.css";
 
@@ -14,15 +21,43 @@ class TorrentInfo extends React.Component {
   };
 
   render() {
-    const item = this.props.item;
+    const { t, item } = this.props;
     return (
       <article className="TorrentInfo">
         <Helmet title={item.title} />
         <header className="TorrentInfo-header">
-          <div className="TorrentInfo-tags">
-            <TagList list={item.tags} />
+          <div className="TorrentInfo-headerMain">
+            <div className="TorrentInfo-tags">
+              <TagList list={item.tags} />
+            </div>
+            <h1 className="TorrentInfo-title">{item.title}</h1>
+            <div className="TorrentInfo-meta">
+              <TorrentMeta item={item} />
+            </div>
           </div>
-          <h1 className="TorrentInfo-title">{item.title}</h1>
+          <div className="TorrentInfo-headerSide">
+            <div className="TorrentInfo-downloads">
+              <Button
+                component="a"
+                className="TorrentInfo-download"
+                primary
+                href={item.magnet}
+              >
+                <FileDownload className="TorrentInfo-downloadIcon" />
+                {t("Magnet")}
+              </Button>
+              <Button
+                component="a"
+                className="TorrentInfo-download"
+                raised
+                primary
+                href={link.download(item)}
+              >
+                <FileDownload className="TorrentInfo-downloadIcon" />
+                {t("Torrent")}
+              </Button>
+            </div>
+          </div>
         </header>
         <div className="TorrentInfo-content">
           <FileTree content={item.content} />
@@ -35,4 +70,4 @@ class TorrentInfo extends React.Component {
   }
 }
 
-export default TorrentInfo;
+export default translate()(TorrentInfo);

@@ -8,12 +8,6 @@
   }
 }
 
-@media (max-width: 960px) {
-  .App-layout {
-    margin: 0 -3rem;
-  }
-}
-
 .App-content {
   min-height: 100vh;
 }

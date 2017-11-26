@@ -1,0 +1,34 @@
+.TorrentMeta {
+  overflow: hidden;
+}
+
+.TorrentMeta-layout {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.TorrentMeta-item {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.TorrentMeta-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+  opacity: 0.6;
+}
+
+.TorrentMeta-text {
+  font-size: 0.75rem;
+}
+
+.TorrentMeta-name {
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}

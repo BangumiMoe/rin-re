@@ -1,6 +1,17 @@
 .TorrentInfo-header {
+  display: flex;
+  align-items: center;
   padding: 2rem 4rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.TorrentInfo-headerMain {
+  flex: 1;
+  overflow: hidden;
+}
+
+.TorrentInfo-headerSide {
+  margin-left: 2rem;
 }
 
 .TorrentInfo-tags {
@@ -13,6 +24,25 @@
   font-size: 1.25rem;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.TorrentInfo-meta {
+  margin-top: 0.25rem;
+}
+
+.TorrentInfo-downloads {
+  display: flex;
+  align-items: center;
+  margin: 0 -0.5rem;
+}
+
+.TorrentInfo-download {
+  margin: 0 0.5rem;
+  font-size: 0.875rem;
+}
+
+.TorrentInfo-downloadIcon {
+  margin-right: 0.4rem;
 }
 
 .TorrentInfo-content {

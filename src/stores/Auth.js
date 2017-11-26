@@ -8,19 +8,7 @@ const Auth = types.compose(
   types
     .model({
       loaded: false,
-      currentUser: types.maybe(
-        types
-          .model({
-            id: types.identifier(),
-            username: types.string,
-            emailHash: types.string,
-          })
-          .views(self => ({
-            get avatar() {
-              return `https://static.bangumi.moe/avatar/${self.emailHash}`;
-            },
-          })),
-      ),
+      currentUser: types.optional(types.frozen, null),
     })
     .actions(self => ({
       load: flow(function*() {

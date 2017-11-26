@@ -7,6 +7,8 @@ import { TransitionGroup } from "react-transition-group";
 import CircularProgress from "material-ui/Progress/CircularProgress";
 import Menu, { MenuItem } from "material-ui/Menu";
 
+import * as link from "../utils/link";
+
 import Fade from "./transitions/Fade";
 import IconButton from "./IconButton";
 import AuthDialog from "./dialogs/AuthDialog";
@@ -97,7 +99,7 @@ class UserCenter extends React.Component {
                   >
                     <img
                       className="UserCenter-avatar"
-                      src={currentUser.avatar}
+                      src={link.avatar(currentUser)}
                       alt={t("User Avatar")}
                     />
                   </IconButton>

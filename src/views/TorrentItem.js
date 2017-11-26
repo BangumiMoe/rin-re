@@ -1,26 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { translate } from "react-i18next";
-
-import format from "date-fns/format";
-
-import Person from "react-icons/lib/md/person";
-import Group from "react-icons/lib/md/group";
 
 import ButtonBase from "./ButtonBase";
+import TorrentMeta from "./TorrentMeta";
 
 import "./TorrentItem.css";
-
-const MetaItem = ({ icon: Icon, name, children }) => (
-  <p className="TorrentItem-meta" title={name}>
-    {Icon && <Icon className="TorrentItem-metaIcon" />}
-    <span className="TorrentItem-metaText">
-      <span className="TorrentItem-metaName">{name}: </span>
-      {children}
-    </span>
-  </p>
-);
 
 class TorrentItem extends React.Component {
   static propTypes = {
@@ -28,7 +13,7 @@ class TorrentItem extends React.Component {
   };
 
   render() {
-    const { t, item } = this.props;
+    const item = this.props.item;
     return (
       <article>
         <ButtonBase
@@ -37,18 +22,8 @@ class TorrentItem extends React.Component {
           to={`/torrent/${item.id}`}
         >
           <h1 className="TorrentItem-title">{item.title}</h1>
-          <div className="TorrentItem-info">
-            <MetaItem name={t("Publish Time")}>
-              {format(item.publishTime, "YYYY-MM-DD")}
-            </MetaItem>
-            <MetaItem icon={Person} name={t("Publisher")}>
-              {item.uploader.username}
-            </MetaItem>
-            {item.team && (
-              <MetaItem icon={Group} name={t("Team")}>
-                {item.team.name}
-              </MetaItem>
-            )}
+          <div className="TorrentItem-meta">
+            <TorrentMeta item={item} />
           </div>
         </ButtonBase>
       </article>
@@ -56,4 +31,4 @@ class TorrentItem extends React.Component {
   }
 }
 
-export default translate()(TorrentItem);
+export default TorrentItem;

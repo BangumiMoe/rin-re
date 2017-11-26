@@ -6,8 +6,7 @@
 }
 
 .TorrentItem:hover,
-.TorrentItem:active,
-.TorrentItem:focus {
+.TorrentItem:active {
   background-color: rgba(0, 0, 0, 0.025);
 }
 
@@ -20,35 +19,4 @@
   margin: 0;
   font-size: 0.875rem;
   font-weight: 500;
-}
-
-.TorrentItem-info {
-  display: flex;
-  margin: 0 -0.5rem;
-}
-
-.TorrentItem-meta {
-  display: flex;
-  align-items: center;
-  margin: 0 0.5rem;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.TorrentItem-metaIcon {
-  width: 0.75rem;
-  height: 0.75rem;
-  margin-right: 0.25rem;
-  opacity: 0.6;
-}
-
-.TorrentItem-metaText {
-  font-size: 0.75rem;
-}
-
-.TorrentItem-metaName {
-  position: absolute;
-  left: -9999px;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
 }
