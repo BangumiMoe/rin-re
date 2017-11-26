@@ -3,6 +3,11 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.TorrentInfo-tags {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
 .TorrentInfo-title {
   margin: 0;
   font-size: 1.25rem;

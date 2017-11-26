@@ -64,11 +64,12 @@
 
 .RichText pre {
   padding: 0.75rem 2rem;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #f5f5f5;
 }
 
 .RichText a {
   display: inline-block;
+  color: #2196f3;
 }
 
 .RichText img {

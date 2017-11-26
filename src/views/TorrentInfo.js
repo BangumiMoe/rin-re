@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 
 import RichText from "./RichText";
 import FileTree from "./FileTree";
+import TagList from "./TagList";
 
 import "./TorrentInfo.css";
 
@@ -18,6 +19,9 @@ class TorrentInfo extends React.Component {
       <article className="TorrentInfo">
         <Helmet title={item.title} />
         <header className="TorrentInfo-header">
+          <div className="TorrentInfo-tags">
+            <TagList list={item.tags} />
+          </div>
           <h1 className="TorrentInfo-title">{item.title}</h1>
         </header>
         <div className="TorrentInfo-content">

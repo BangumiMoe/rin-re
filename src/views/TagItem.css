@@ -1,0 +1,8 @@
+.TagItem {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  color: #3f51b5;
+  background-color: #e8eaf6;
+}

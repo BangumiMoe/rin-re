@@ -1,0 +1,16 @@
+.TagList {
+  overflow: hidden;
+}
+
+.TagList-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -0.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.TagList-item {
+  margin: 0.25rem;
+}
