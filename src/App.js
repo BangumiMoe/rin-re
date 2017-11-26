@@ -36,14 +36,16 @@ class App extends React.Component {
                 )}
               </I18n>
 
-              <AppHeader />
-              <main id="main" className="App-content">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/torrent/:id" component={Torrent} />
-                </Switch>
-              </main>
-              <AppFooter />
+              <div className="App-layout">
+                <AppHeader />
+                <main id="main" className="App-content">
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/torrent/:id" component={Torrent} />
+                  </Switch>
+                </main>
+                <AppFooter />
+              </div>
 
               <ScrollManager />
             </div>
