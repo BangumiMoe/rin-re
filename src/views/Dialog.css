@@ -55,8 +55,8 @@
 }
 
 .Dialog-header {
-  margin: 1.5rem 0;
-  padding: 0 1.5rem;
+  padding: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .Dialog-title {
@@ -66,12 +66,11 @@
 }
 
 .Dialog-content {
-  margin: 1.5rem 0;
-  padding: 0 1.5rem;
+  padding: 1.5rem;
 }
 
 .Dialog-header + .Dialog-content {
-  margin-top: -0.5rem;
+  margin-top: 0;
 }
 
 .Dialog-actions {

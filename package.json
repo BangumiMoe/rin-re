@@ -47,6 +47,7 @@
     "react-i18next": "^6.2.0",
     "react-icons": "^2.2.7",
     "react-overlays": "github:lixiaoyan/react-overlays#prebuilt",
+    "react-popper": "^0.7.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.17",
     "react-transition-group": "^2.2.1",
