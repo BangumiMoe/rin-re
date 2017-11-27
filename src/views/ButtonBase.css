@@ -12,7 +12,7 @@
   color: inherit;
   background: none;
   cursor: pointer;
-  appearance: none;
+  appearance: none !important;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transition: opacity 250ms;
