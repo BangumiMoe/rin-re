@@ -3,9 +3,9 @@ import { translate } from "react-i18next";
 
 import Language from "react-icons/lib/md/language";
 import List, { ListItem } from "material-ui/List";
-import Dialog, { DialogTitle } from "material-ui/Dialog";
 
 import IconButton from "./IconButton";
+import Dialog, { DialogTitle } from "./Dialog";
 
 import "./LanguageSwitcher.css";
 

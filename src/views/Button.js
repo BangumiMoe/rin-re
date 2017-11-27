@@ -9,9 +9,11 @@ import "./Button.css";
 class Button extends React.Component {
   static propTypes = {
     primary: PropTypes.bool.isRequired,
+    type: PropTypes.string.isRequired,
   };
   static defaultProps = {
     primary: false,
+    type: "button",
   };
 
   render() {

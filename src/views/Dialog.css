@@ -1,0 +1,89 @@
+.Dialog {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.Dialog-appear,
+.Dialog-enter {
+  opacity: 0;
+}
+
+.Dialog-appear-active,
+.Dialog-enter-active {
+  opacity: 1;
+  transition: opacity 250ms;
+}
+
+.Dialog-exit {
+  opacity: 1;
+}
+
+.Dialog-exit-active {
+  opacity: 0;
+  transition: opacity 250ms;
+}
+
+.Dialog-backdrop {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.Dialog-dialog {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 2px;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms;
+}
+
+.Dialog-header {
+  margin: 1.5rem 0;
+  padding: 0 1.5rem;
+}
+
+.Dialog-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.Dialog-content {
+  margin: 1.5rem 0;
+  padding: 0 1.5rem;
+}
+
+.Dialog-header + .Dialog-content {
+  margin-top: -0.5rem;
+}
+
+.Dialog-actions {
+  padding: 0.5rem 1.5rem;
+}
+
+.Dialog-actionsLayout {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 -1.25rem;
+}
+
+.Dialog-actionsLayout .Button {
+  margin: 0 0.25rem;
+}

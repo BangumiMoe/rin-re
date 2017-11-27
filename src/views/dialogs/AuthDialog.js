@@ -4,15 +4,11 @@ import { observer, inject } from "mobx-react";
 import { translate } from "react-i18next";
 
 import CircularProgress from "material-ui/Progress/CircularProgress";
-import Button from "material-ui/Button";
 import TextField from "material-ui/TextField";
-import Dialog, {
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-} from "material-ui/Dialog";
 
 import Fade from "../transitions/Fade";
+import Button from "../Button";
+import Dialog, { DialogTitle, DialogContent, DialogActions } from "../Dialog";
 
 import "./AuthDialog.css";
 
