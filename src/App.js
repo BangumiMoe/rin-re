@@ -7,7 +7,6 @@ import Helmet from "react-helmet";
 import http from "./http";
 import Store from "./stores/Store";
 
-import Theme from "./Theme";
 import ScrollManager from "./views/effects/ScrollManager";
 import AppHeader from "./views/AppHeader";
 import AppFooter from "./views/AppFooter";
@@ -25,31 +24,29 @@ class App extends React.Component {
     return (
       <I18nextProvider i18n={i18n}>
         <Provider store={this.store}>
-          <Theme>
-            <div className="App">
-              <I18n>
-                {t => (
-                  <Helmet
-                    defaultTitle={t("Bangumi Moe")}
-                    titleTemplate={`%s - ${t("Bangumi Moe")}`}
-                  />
-                )}
-              </I18n>
+          <div className="App">
+            <I18n>
+              {t => (
+                <Helmet
+                  defaultTitle={t("Bangumi Moe")}
+                  titleTemplate={`%s - ${t("Bangumi Moe")}`}
+                />
+              )}
+            </I18n>
 
-              <div className="App-layout">
-                <AppHeader />
-                <main id="main" className="App-content">
-                  <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/torrent/:id" component={Torrent} />
-                  </Switch>
-                </main>
-                <AppFooter />
-              </div>
-
-              <ScrollManager />
+            <div className="App-layout">
+              <AppHeader />
+              <main id="main" className="App-content">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/torrent/:id" component={Torrent} />
+                </Switch>
+              </main>
+              <AppFooter />
             </div>
-          </Theme>
+
+            <ScrollManager />
+          </div>
         </Provider>
       </I18nextProvider>
     );
