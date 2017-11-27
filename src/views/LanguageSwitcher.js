@@ -2,9 +2,9 @@ import React from "react";
 import { translate } from "react-i18next";
 
 import Language from "react-icons/lib/md/language";
-import List, { ListItem } from "material-ui/List";
 
 import IconButton from "./IconButton";
+import List, { ListItem } from "./List";
 import Dialog, { DialogTitle } from "./Dialog";
 
 import "./LanguageSwitcher.css";
@@ -56,19 +56,19 @@ class LanguageSwitcher extends React.Component {
         open={this.state.dialogOpen}
         onRequestClose={this.handleDialogRequestClose}
       >
-        <DialogTitle>{t("Language")}</DialogTitle>
-        <List className="LanguageSwitcher-list">
-          {LANGUAGES.map(({ language, text }) => (
-            <ListItem
-              key={language}
-              className="LanguageSwitcher-item"
-              button
-              onClick={() => this.handleRequestChange(language)}
-            >
-              {text}
-            </ListItem>
-          ))}
-        </List>
+        <div className="LanguageSwitcher-dialog">
+          <DialogTitle>{t("Language")}</DialogTitle>
+          <List>
+            {LANGUAGES.map(({ language, text }) => (
+              <ListItem
+                key={language}
+                onClick={() => this.handleRequestChange(language)}
+              >
+                {text}
+              </ListItem>
+            ))}
+          </List>
+        </div>
       </Dialog>,
     ];
   }
