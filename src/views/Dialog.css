@@ -69,7 +69,7 @@
 }
 
 .Dialog-header + .Dialog-content {
-  margin-top: 0;
+  padding-top: 0;
 }
 
 .Dialog-actions {
