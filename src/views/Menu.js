@@ -16,10 +16,13 @@ class Menu extends React.Component {
   static propTypes = {
     target: PropTypes.func.isRequired,
     placement: PropTypes.string.isRequired,
+    offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+      .isRequired,
     onRequestClose: PropTypes.func,
   };
   static defaultProps = {
     placement: "bottom-start",
+    offset: 0,
   };
 
   render() {

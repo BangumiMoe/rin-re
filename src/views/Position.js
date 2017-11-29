@@ -7,12 +7,15 @@ import Popper from "popper.js";
 class Position extends React.Component {
   static propTypes = {
     target: PropTypes.func.isRequired,
-    placement: PropTypes.string.isRequired,
     fixed: PropTypes.bool.isRequired,
+    placement: PropTypes.string.isRequired,
+    offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+      .isRequired,
   };
   static defaultProps = {
-    placement: "auto",
     fixed: false,
+    placement: "auto",
+    offset: 0,
   };
 
   state = {
@@ -20,11 +23,14 @@ class Position extends React.Component {
   };
 
   componentDidMount() {
-    const { target, placement, fixed } = this.props;
+    const { target, placement, fixed, offset } = this.props;
     this.popper = new Popper(target(), this.root, {
       placement: placement,
       positionFixed: fixed,
       modifiers: {
+        offset: {
+          offset,
+        },
         applyStyle: {
           enabled: false,
         },
@@ -37,9 +43,6 @@ class Position extends React.Component {
             return data;
           },
         },
-      },
-      onUpdate: data => {
-        console.log(data);
       },
     });
   }
@@ -58,7 +61,7 @@ class Position extends React.Component {
   }
 
   render() {
-    const { target, placement, fixed, ...props } = this.props;
+    const { target, placement, fixed, offset, ...props } = this.props;
     const data = this.state.data;
     return (
       <div

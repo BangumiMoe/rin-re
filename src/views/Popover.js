@@ -11,10 +11,13 @@ class Popover extends React.Component {
   static propTypes = {
     target: PropTypes.func.isRequired,
     placement: PropTypes.string.isRequired,
+    offset: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+      .isRequired,
     onRequestClose: PropTypes.func,
   };
   static defaultProps = {
     placement: "auto",
+    offset: 0,
   };
 
   render() {
@@ -23,6 +26,7 @@ class Popover extends React.Component {
       open,
       target,
       placement,
+      offset,
       onRequestClose,
       children,
       ...props
@@ -39,8 +43,9 @@ class Popover extends React.Component {
         <Position
           className={classNames("Popover-popover", className)}
           target={target}
-          placement={placement}
           fixed
+          placement={placement}
+          offset={offset}
         >
           {children}
         </Position>

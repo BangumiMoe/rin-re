@@ -102,6 +102,7 @@ class UserCenter extends React.Component {
                     id="UserCenter-menu"
                     target={() => this.action}
                     placement="bottom-end"
+                    offset={"0 16px"}
                     open={this.state.menuOpen}
                     onRequestClose={this.handleMenuRequestClose}
                   >
