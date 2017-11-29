@@ -5,12 +5,12 @@ import { translate } from "react-i18next";
 import Person from "react-icons/lib/md/person";
 import { TransitionGroup } from "react-transition-group";
 import CircularProgress from "material-ui/Progress/CircularProgress";
-import Menu, { MenuItem } from "material-ui/Menu";
 
 import * as link from "../utils/link";
 
 import Fade from "./transitions/Fade";
 import IconButton from "./IconButton";
+import Menu, { MenuItem } from "./Menu";
 import AuthDialog from "./dialogs/AuthDialog";
 
 import "./UserCenter.css";
@@ -31,21 +31,14 @@ class UserCenter extends React.Component {
   }
 
   handleActionClick = event => {
-    const anchor = event.target.closest("button");
-    const rect = anchor.getBoundingClientRect();
     this.setState({
       menuOpen: true,
-      menuAnchorPosition: {
-        left: rect.right,
-        top: rect.bottom + 24,
-      },
     });
   };
 
   handleMenuRequestClose = () => {
     this.setState({
       menuOpen: false,
-      menuAnchorPosition: null,
     });
   };
 
@@ -89,6 +82,7 @@ class UserCenter extends React.Component {
               <Fade key="user" appear exit={false}>
                 <div>
                   <IconButton
+                    innerRef={node => (this.action = node)}
                     className="UserCenter-action"
                     aria-label={t("User Menu")}
                     aria-haspopup="true"
@@ -106,10 +100,9 @@ class UserCenter extends React.Component {
 
                   <Menu
                     id="UserCenter-menu"
+                    target={() => this.action}
+                    placement="bottom-end"
                     open={this.state.menuOpen}
-                    anchorReference={"anchorPosition"}
-                    anchorPosition={this.state.menuAnchorPosition}
-                    transformOrigin={{ horizontal: "right", vertical: "top" }}
                     onRequestClose={this.handleMenuRequestClose}
                   >
                     <MenuItem onClick={this.handleMenuRequestClose}>

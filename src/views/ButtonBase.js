@@ -78,6 +78,7 @@ class ButtonBase extends React.Component {
 
   render() {
     const {
+      innerRef,
       ripple,
       component: Component,
       className,
@@ -85,7 +86,11 @@ class ButtonBase extends React.Component {
       ...props
     } = this.props;
     return (
-      <Component className={classNames("ButtonBase", className)} {...props}>
+      <Component
+        ref={innerRef}
+        className={classNames("ButtonBase", className)}
+        {...props}
+      >
         {children}
         <Ripple ref={node => (this.ripple = node)} {...ripple} />
       </Component>
