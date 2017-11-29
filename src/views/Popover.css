@@ -1,0 +1,30 @@
+.Popover {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.Popover-backdrop {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.Popover-popover {
+  z-index: 2;
+  outline: none;
+}
+
+.Popover-popover {
+  overflow: hidden;
+  padding: 0.5rem 0;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

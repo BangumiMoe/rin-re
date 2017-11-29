@@ -53,22 +53,21 @@ class LanguageSwitcher extends React.Component {
 
       <Dialog
         key="dialog"
+        className="LanguageSwitcher-dialog"
         open={this.state.dialogOpen}
         onRequestClose={this.handleDialogRequestClose}
       >
-        <div className="LanguageSwitcher-dialog">
-          <DialogTitle>{t("Language")}</DialogTitle>
-          <List>
-            {LANGUAGES.map(({ language, text }) => (
-              <ListItem
-                key={language}
-                onClick={() => this.handleRequestChange(language)}
-              >
-                {text}
-              </ListItem>
-            ))}
-          </List>
-        </div>
+        <DialogTitle>{t("Language")}</DialogTitle>
+        <List>
+          {LANGUAGES.map(({ language, text }) => (
+            <ListItem
+              key={language}
+              onClick={() => this.handleRequestChange(language)}
+            >
+              {text}
+            </ListItem>
+          ))}
+        </List>
       </Dialog>,
     ];
   }

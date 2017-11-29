@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import { CSSTransition } from "react-transition-group";
 import { Modal } from "react-overlays";
 
@@ -19,7 +20,7 @@ class Dialog extends React.Component {
   };
 
   render() {
-    const { open, onRequestClose, children, ...props } = this.props;
+    const { className, open, onRequestClose, children, ...props } = this.props;
     return (
       <Modal
         className="Dialog"
@@ -31,7 +32,9 @@ class Dialog extends React.Component {
         onEscapeKeyDown={onRequestClose}
         {...props}
       >
-        <article className="Dialog-dialog">{children}</article>
+        <article className={classNames("Dialog-dialog", className)}>
+          {children}
+        </article>
       </Modal>
     );
   }

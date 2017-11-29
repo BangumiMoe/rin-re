@@ -1,0 +1,19 @@
+.Menu-appear,
+.Menu-enter {
+  opacity: 0;
+}
+
+.Menu-appear-active,
+.Menu-enter-active {
+  opacity: 1;
+  transition: opacity 250ms;
+}
+
+.Menu-exit {
+  opacity: 1;
+}
+
+.Menu-exit-active {
+  opacity: 0;
+  transition: opacity 250ms;
+}

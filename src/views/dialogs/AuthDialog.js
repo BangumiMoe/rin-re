@@ -96,11 +96,12 @@ class AuthDialog extends React.Component {
     const t = this.props.t;
     return (
       <Dialog
+        className="AuthDialog"
         open={this.props.open}
         onRequestClose={this.handleRequestClose}
         onExited={this.handleExited}
       >
-        <form className="AuthDialog" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <DialogTitle>{t("Login")}</DialogTitle>
 
           <DialogContent>

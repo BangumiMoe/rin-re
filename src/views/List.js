@@ -5,16 +5,16 @@ import ButtonBase from "./ButtonBase";
 
 import "./List.css";
 
-class List extends React.Component {
-  render() {
-    const { className, ...props } = this.props;
-    return <ul className={classNames("List", className)} {...props} />;
-  }
-}
+const List = ({ className, ...props }) => (
+  <ul className={classNames("List", className)} {...props} />
+);
 
-const ListItem = ({ className, ...props }) => (
-  <li className="List-item">
-    <ButtonBase className={classNames("List-button", className)} {...props} />
+const ListItem = ({ className, buttonClassName, ...props }) => (
+  <li className={classNames("List-item", className)}>
+    <ButtonBase
+      className={classNames("List-button", buttonClassName)}
+      {...props}
+    />
   </li>
 );
 
