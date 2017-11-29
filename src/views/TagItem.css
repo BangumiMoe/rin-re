@@ -6,3 +6,8 @@
   color: #3f51b5;
   background-color: rgba(63, 83, 181, 0.1);
 }
+
+.TagItem .Ripple-ripple {
+  max-width: 8rem;
+  max-height: 8rem;
+}
