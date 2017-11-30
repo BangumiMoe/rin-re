@@ -12,6 +12,7 @@
   transition: background-color 250ms;
 }
 
-.List-button:hover {
+.List-button:hover,
+.List-button:active {
   background-color: rgba(0, 0, 0, 0.05);
 }

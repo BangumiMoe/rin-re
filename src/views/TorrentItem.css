@@ -1,5 +1,6 @@
 .TorrentItem {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 0.75rem 4rem;
   color: rgba(0, 0, 0, 0.8);
   transition: background-color 250ms;
@@ -13,6 +14,23 @@
 .TorrentItem .Ripple-ripple {
   max-width: 16rem;
   max-height: 16rem;
+}
+
+.TorrentItem-category {
+  width: 5rem;
+  margin-right: 1rem;
+  padding: 0.25rem 0;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  background-color: #3f51b5;
+}
+
+.TorrentItem-content {
+  flex: 1;
+  overflow: hidden;
 }
 
 .TorrentItem-title {

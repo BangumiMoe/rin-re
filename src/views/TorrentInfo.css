@@ -49,6 +49,8 @@
   max-height: 15rem;
   padding: 1rem 4rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+  background-clip: padding-box;
 }
 
 .TorrentInfo-introduction {
