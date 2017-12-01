@@ -1,8 +1,8 @@
 /*
- *        radius: 45
- * circumference: 282.74 ≈ 282.7433388230814 = 2 * radius * π
- *  start offset: 268.61 ≈ 268.6061718819273 = (1 - 0.05) * circumference
- *    end offset:  56.55 ≈ 56.54866776461626 = (1 - 0.8) * circumference
+ *        radius: 16
+ * circumference: 94.25 ≈ 94.24777960769379 = 2 * radius * π
+ *  start offset: 89.54 ≈ 89.5353906273091  = (1 - 0.05) * circumference
+ *    end offset: 18.85 ≈ 18.84955592153875 = (1 - 0.8) * circumference
  */
 
 .Loader {
@@ -32,8 +32,8 @@
 
 .Loader-circle {
   stroke: currentColor;
-  stroke-dasharray: 282.74;
-  stroke-dashoffset: 268.61;
+  stroke-dasharray: 94.25;
+  stroke-dashoffset: 89.54;
   fill: none;
   transform-origin: center;
   animation: Loader-circle 4s infinite;
@@ -41,70 +41,70 @@
 
 @keyframes Loader-circle {
   0.01% {
-    stroke-dashoffset: 268.61;
+    stroke-dashoffset: 89.54;
     transform: rotateX(0deg) rotate(0deg);
   }
   12.5% {
-    stroke-dashoffset: 56.55;
+    stroke-dashoffset: 18.85;
     transform: rotateX(0deg) rotate(0deg);
   }
   12.51% {
-    stroke-dashoffset: 56.55;
+    stroke-dashoffset: 18.85;
     transform: rotateX(180deg) rotate(72deg);
   }
   25% {
-    stroke-dashoffset: 268.61;
+    stroke-dashoffset: 89.54;
     transform: rotateX(180deg) rotate(72deg);
   }
 
   25.01% {
-    stroke-dashoffset: 268.61;
+    stroke-dashoffset: 89.54;
     transform: rotateX(0deg) rotate(270deg);
   }
   37.5% {
-    stroke-dashoffset: 56.55;
+    stroke-dashoffset: 18.85;
     transform: rotateX(0deg) rotate(270deg);
   }
   37.51% {
-    stroke-dashoffset: 56.55;
+    stroke-dashoffset: 18.85;
     transform: rotateX(180deg) rotate(162deg);
   }
   50% {
-    stroke-dashoffset: 268.61;
+    stroke-dashoffset: 89.54;
     transform: rotateX(180deg) rotate(162deg);
   }
 
   50.01% {
-    stroke-dashoffset: 268.61;
+    stroke-dashoffset: 89.54;
     transform: rotateX(0deg) rotate(180deg);
   }
   62.5% {
-    stroke-dashoffset: 56.55;
+    stroke-dashoffset: 18.85;
     transform: rotateX(0deg) rotate(180deg);
   }
   62.51% {
-    stroke-dashoffset: 56.55;
+    stroke-dashoffset: 18.85;
     transform: rotateX(180deg) rotate(252deg);
   }
   75% {
-    stroke-dashoffset: 268.61;
+    stroke-dashoffset: 89.54;
     transform: rotateX(180deg) rotate(252deg);
   }
 
   75.01% {
-    stroke-dashoffset: 268.61;
+    stroke-dashoffset: 89.54;
     transform: rotateX(0deg) rotate(90deg);
   }
   87.5% {
-    stroke-dashoffset: 56.55;
+    stroke-dashoffset: 18.85;
     transform: rotateX(0deg) rotate(90deg);
   }
   87.51% {
-    stroke-dashoffset: 56.55;
+    stroke-dashoffset: 18.85;
     transform: rotateX(180deg) rotate(342deg);
   }
   100% {
-    stroke-dashoffset: 268.61;
+    stroke-dashoffset: 89.54;
     transform: rotateX(180deg) rotate(342deg);
   }
 }

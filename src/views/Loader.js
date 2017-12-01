@@ -4,13 +4,13 @@ import "./Loader.css";
 
 const Loader = () => (
   <span className="Loader">
-    <svg className="Loader-box" viewBox="0 0 100 100">
+    <svg className="Loader-box" viewBox="0 0 32 32">
       <circle
         className="Loader-circle"
-        cx="50"
-        cy="50"
-        r="45"
-        strokeWidth="8"
+        cx="16"
+        cy="16"
+        r="15"
+        strokeWidth="2"
       />
     </svg>
   </span>
