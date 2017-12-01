@@ -18,3 +18,8 @@
   align-items: center;
   height: 30rem;
 }
+
+.LoaderContainer-loader .Loader {
+  width: 3rem;
+  height: 3rem;
+}

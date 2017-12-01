@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { observer, inject } from "mobx-react";
 import { translate } from "react-i18next";
 
-import CircularProgress from "material-ui/Progress/CircularProgress";
 import TextField from "material-ui/TextField";
 
 import Fade from "../transitions/Fade";
+import Loader from "../Loader";
 import Button from "../Button";
 import Dialog, { DialogTitle, DialogContent, DialogActions } from "../Dialog";
 
@@ -148,7 +148,7 @@ class AuthDialog extends React.Component {
 
           <Fade in={this.state.loading} mountOnEnter unmountOnExit>
             <div className="AuthDialog-loader">
-              <CircularProgress />
+              <Loader />
             </div>
           </Fade>
         </form>
