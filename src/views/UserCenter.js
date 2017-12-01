@@ -4,11 +4,11 @@ import { translate } from "react-i18next";
 
 import Person from "react-icons/lib/md/person";
 import { TransitionGroup } from "react-transition-group";
-import CircularProgress from "material-ui/Progress/CircularProgress";
 
 import * as link from "../utils/link";
 
 import Fade from "./transitions/Fade";
+import Loader from "./Loader";
 import IconButton from "./IconButton";
 import Menu, { MenuItem } from "./Menu";
 import AuthDialog from "./dialogs/AuthDialog";
@@ -123,7 +123,7 @@ class UserCenter extends React.Component {
           {this.auth.state === "loading" && (
             <Fade key="loader" appear exit={false}>
               <div className="UserCenter-loader">
-                <CircularProgress color="inherit" size={36} thickness={2} />
+                <Loader />
               </div>
             </Fade>
           )}

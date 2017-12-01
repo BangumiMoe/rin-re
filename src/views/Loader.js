@@ -10,7 +10,7 @@ const Loader = () => (
         cx="50"
         cy="50"
         r="45"
-        strokeWidth="10"
+        strokeWidth="8"
       />
     </svg>
   </span>

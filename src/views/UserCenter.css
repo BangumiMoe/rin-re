@@ -19,6 +19,10 @@
   height: 100%;
 }
 
+.UserCenter-loader .Loader {
+  color: inherit;
+}
+
 .UserCenter-avatar {
   display: block;
   width: 2rem;
