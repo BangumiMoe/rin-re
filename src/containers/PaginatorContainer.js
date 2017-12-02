@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { observer } from "mobx-react";
 
 import { TransitionGroup } from "react-transition-group";
 
@@ -34,6 +35,7 @@ class PaginatorContainer extends React.Component {
             <TransitionGroup>
               <Fade key={page} appear exit={false}>
                 <div>
+                  {console.log(data)}
                   {data.length ? children(data, page) : <EmptyState />}
                   {Boolean(store.pageCount) && (
                     <Paginator
@@ -54,4 +56,4 @@ class PaginatorContainer extends React.Component {
   }
 }
 
-export default PaginatorContainer;
+export default observer(PaginatorContainer);
