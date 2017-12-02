@@ -56,7 +56,8 @@ class Search extends React.Component {
     return (
       <div className="Search">
         <SearchEditor
-          autoFocus
+          key={this.query}
+          autoFocus={!this.query}
           defaultValue={this.query}
           onSubmit={this.handleSubmit}
         />

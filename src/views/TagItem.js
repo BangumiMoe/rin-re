@@ -15,7 +15,16 @@ class TagItem extends React.Component {
   render() {
     const { item } = this.props;
     return (
-      <ButtonBase component={Link} className="TagItem" to={`/tag/${item.id}`}>
+      <ButtonBase
+        component={Link}
+        className="TagItem"
+        to={
+          "/search?" +
+          new URLSearchParams({
+            query: `\`${item.id}\``,
+          }).toString()
+        }
+      >
         <Translate value={item.name} locales={item.locale} />
       </ButtonBase>
     );
