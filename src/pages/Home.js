@@ -24,7 +24,7 @@ class Home extends React.Component {
 
   handlePageChange = page => {
     this.props.history.push(
-      "/home?" +
+      "/?" +
         new URLSearchParams({
           page,
         }).toString(),
