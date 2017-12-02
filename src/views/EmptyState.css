@@ -1,0 +1,11 @@
+.EmptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+}
+
+.EmptyState-status {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.4);
+}

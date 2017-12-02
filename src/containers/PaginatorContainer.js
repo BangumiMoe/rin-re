@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 import { TransitionGroup } from "react-transition-group";
 
 import Fade from "../views/transitions/Fade";
+import EmptyState from "../views/EmptyState";
 import Paginator from "../views/Paginator";
+
 import Container from "./Container";
 
 class PaginatorContainer extends React.Component {
@@ -32,12 +34,14 @@ class PaginatorContainer extends React.Component {
             <TransitionGroup>
               <Fade key={page} appear exit={false}>
                 <div>
-                  {children(data, page)}
-                  <Paginator
-                    value={page}
-                    pageCount={store.pageCount}
-                    onChange={onPageChange}
-                  />
+                  {data.length ? children(data, page) : <EmptyState />}
+                  {Boolean(store.pageCount) && (
+                    <Paginator
+                      value={page}
+                      pageCount={store.pageCount}
+                      onChange={onPageChange}
+                    />
+                  )}
                 </div>
               </Fade>
             </TransitionGroup>

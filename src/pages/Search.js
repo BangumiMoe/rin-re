@@ -55,7 +55,7 @@ class Search extends React.Component {
         <SearchEditor defaultValue={this.query} onSubmit={this.handleSubmit} />
         {this.query && (
           <React.Fragment>
-            <SectionTitle icon={SearchIcon} title={t("Search Result")} />
+            <SectionTitle icon={SearchIcon} title={t("Search Results")} />
             <SearchContainer
               store={this.paginator}
               query={this.query}

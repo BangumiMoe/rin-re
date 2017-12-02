@@ -9,6 +9,8 @@
 
   "Cancel": "取消",
 
+  "No Results": "没有结果",
+
   "Previous Page": "上一页",
   "Next Page": "下一页",
 
@@ -27,7 +29,7 @@
   "Search": "搜索",
 
   "Latest Torrents": "最新种子",
-  "Search Result": "搜索结果",
+  "Search Results": "搜索结果",
 
   "Torrent": "种子",
   "Magnet": "磁性链接",

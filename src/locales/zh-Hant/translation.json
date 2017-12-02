@@ -9,6 +9,8 @@
 
   "Cancel": "取消",
 
+  "No Results": "沒有結果",
+
   "Previous Page": "上一頁",
   "Next Page": "下一頁",
 
@@ -27,7 +29,7 @@
   "Search": "搜尋",
 
   "Latest Torrents": "最新種子",
-  "Search Result": "搜尋結果",
+  "Search Results": "搜尋結果",
 
   "Torrent": "種子",
   "Magnet": "磁性連結",
