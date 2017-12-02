@@ -11,7 +11,7 @@ class PaginatorContainer extends React.Component {
   static propTypes = {
     store: PropTypes.object.isRequired,
     page: PropTypes.number.isRequired,
-    transition: PropTypes.bool,
+    transition: PropTypes.bool.isRequired,
     onPageChange: PropTypes.func,
     children: PropTypes.func.isRequired,
   };

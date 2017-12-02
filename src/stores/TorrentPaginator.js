@@ -10,6 +10,7 @@ const TorrentPaginator = types.compose(
   Fetch,
   types
     .model({
+      count: 0,
       pageCount: 0,
       pages: types.optional(types.map(TorrentPage), {}),
     })
@@ -22,6 +23,7 @@ const TorrentPaginator = types.compose(
         const result = yield self.fetch(http =>
           http.get(`/api/v2/torrent/page/${page}`),
         );
+        self.count = result.count;
         self.pageCount = result.pageCount;
         self.pages.set(page, result.torrents);
       }),

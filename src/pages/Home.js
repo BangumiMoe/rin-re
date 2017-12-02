@@ -5,6 +5,8 @@ import { translate } from "react-i18next";
 import ListIcon from "react-icons/lib/md/list";
 import RSSFeedIcon from "react-icons/lib/md/rss-feed";
 
+import injectSearchParams from "../utils/injectSearchParams";
+
 import IconButton from "../views/IconButton";
 import SectionTitle from "../views/SectionTitle";
 import TorrentList from "../views/TorrentList";
@@ -17,12 +19,16 @@ class Home extends React.Component {
   }
 
   get page() {
-    const params = new URLSearchParams(this.props.location.search);
-    return Number(params.get("page")) || 1;
+    return Number(this.props.searchParams.get("page")) || 1;
   }
 
   handlePageChange = page => {
-    this.props.history.push(`?page=${page}`);
+    this.props.history.push(
+      "/home?" +
+        new URLSearchParams({
+          page,
+        }).toString(),
+    );
   };
 
   render() {
@@ -55,4 +61,4 @@ class Home extends React.Component {
   }
 }
 
-export default translate()(inject("store")(Home));
+export default translate()(injectSearchParams(inject("store")(Home)));

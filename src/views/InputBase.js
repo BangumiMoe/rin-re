@@ -16,9 +16,13 @@ class InputBase extends React.Component {
   };
 
   render() {
-    const { component: Component, className, ...props } = this.props;
+    const { innerRef, component: Component, className, ...props } = this.props;
     return (
-      <Component className={classNames("InputBase", className)} {...props} />
+      <Component
+        ref={innerRef}
+        className={classNames("InputBase", className)}
+        {...props}
+      />
     );
   }
 }
