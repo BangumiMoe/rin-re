@@ -11,9 +11,7 @@ class Search extends React.Component {
     const t = this.props.t;
     return (
       <div className="Search">
-        <div className="Search-editor">
-          <SearchEditor />
-        </div>
+        <SearchEditor />
         <SectionTitle icon={SearchIcon} title={t("Search Result")} />
       </div>
     );

@@ -1,7 +1,7 @@
 .SearchEditor {
   display: flex;
   align-items: center;
-  padding: 3rem 4rem;
+  padding: 2rem 4rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fafafa;
 }
