@@ -3,7 +3,7 @@ import { inject } from "mobx-react";
 import { translate } from "react-i18next";
 
 import ListIcon from "react-icons/lib/md/list";
-import FeedIcon from "react-icons/lib/md/rss-feed";
+import RSSFeedIcon from "react-icons/lib/md/rss-feed";
 
 import * as link from "../utils/link";
 import injectSearchParams from "../utils/injectSearchParams";
@@ -40,8 +40,13 @@ class Home extends React.Component {
           icon={ListIcon}
           title={t("Latest Torrents")}
           actions={
-            <IconButton component="a" target="_blank" href={link.feed()}>
-              <FeedIcon />
+            <IconButton
+              component="a"
+              target="_blank"
+              href={link.rss()}
+              aria-label={t("RSS Feed")}
+            >
+              <RSSFeedIcon />
             </IconButton>
           }
         />

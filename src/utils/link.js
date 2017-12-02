@@ -8,6 +8,6 @@ export const download = torrent =>
     torrent.title,
   )}.torrent`;
 
-export const feed = () => `${HOST}/rss/latest`;
-export const searchFeed = query =>
+export const rss = () => `${HOST}/rss/latest`;
+export const searchRSS = query =>
   `${HOST}/rss/search/${encodeURIComponent(query)}`;

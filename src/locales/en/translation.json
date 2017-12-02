@@ -8,9 +8,7 @@
   "Change Language": "Change Language",
 
   "Cancel": "Cancel",
-
   "No Results": "No Results",
-
   "Previous Page": "Previous Page",
   "Next Page": "Next Page",
 
@@ -23,18 +21,17 @@
 
   "Username": "Username",
   "Password": "Password",
-
   "Incorrect username or password": "Incorrect username or password",
-
-  "Search": "Search",
-
-  "Latest Torrents": "Latest Torrents",
-  "Search Results": "Search Results",
 
   "Torrent": "Torrent",
   "Magnet": "Magnet",
+  "Search": "Search",
+  "RSS Feed": "RSS Feed",
 
   "Publish Time": "Publish Time",
   "Publisher": "Publisher",
-  "Team": "Team"
+  "Team": "Team",
+
+  "Latest Torrents": "Latest Torrents",
+  "Search Results": "Search Results"
 }

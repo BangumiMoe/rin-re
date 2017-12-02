@@ -20,7 +20,12 @@ const AppHeader = ({ t }) => (
     </div>
     <div className="AppHeader-side">
       <div className="AppHeader-sideItem">
-        <IconButton className="AppHeader-search" component={Link} to="/search">
+        <IconButton
+          className="AppHeader-search"
+          component={Link}
+          to="/search"
+          aria-label={t("Search")}
+        >
           <SearchIcon />
         </IconButton>
       </div>

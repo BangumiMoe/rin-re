@@ -8,9 +8,7 @@
   "Change Language": "切换语言",
 
   "Cancel": "取消",
-
   "No Results": "没有结果",
-
   "Previous Page": "上一页",
   "Next Page": "下一页",
 
@@ -23,18 +21,17 @@
 
   "Username": "用户名",
   "Password": "密码",
-
   "Incorrect username or password": "用户名或密码错误",
-
-  "Search": "搜索",
-
-  "Latest Torrents": "最新种子",
-  "Search Results": "搜索结果",
 
   "Torrent": "种子",
   "Magnet": "磁性链接",
+  "Search": "搜索",
+  "RSS Feed": "RSS 订阅",
 
   "Publish Time": "发布时间",
   "Publisher": "发布者",
-  "Team": "团队"
+  "Team": "团队",
+
+  "Latest Torrents": "最新种子",
+  "Search Results": "搜索结果"
 }

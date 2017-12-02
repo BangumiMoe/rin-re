@@ -2,7 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   height: 30rem;
+  padding: 4rem;
 }
 
 .EmptyState-status {

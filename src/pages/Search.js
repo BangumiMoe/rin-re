@@ -3,7 +3,7 @@ import { inject } from "mobx-react";
 import { translate } from "react-i18next";
 
 import SearchIcon from "react-icons/lib/md/search";
-import FeedIcon from "react-icons/lib/md/rss-feed";
+import RSSFeedIcon from "react-icons/lib/md/rss-feed";
 
 import * as link from "../utils/link";
 import injectSearchParams from "../utils/injectSearchParams";
@@ -69,9 +69,10 @@ class Search extends React.Component {
                 <IconButton
                   component="a"
                   target="_blank"
-                  href={link.searchFeed(this.query)}
+                  href={link.searchRSS(this.query)}
+                  aria-label={t("RSS Feed")}
                 >
-                  <FeedIcon />
+                  <RSSFeedIcon />
                 </IconButton>
               }
             />
