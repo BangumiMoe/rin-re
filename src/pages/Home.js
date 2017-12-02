@@ -1,8 +1,13 @@
 import React from "react";
 import { inject } from "mobx-react";
 
-import PaginatorContainer from "../containers/PaginatorContainer";
+import List from "react-icons/lib/md/list";
+import RSSFeed from "react-icons/lib/md/rss-feed";
+
+import IconButton from "../views/IconButton";
 import TorrentList from "../views/TorrentList";
+
+import PaginatorContainer from "../containers/PaginatorContainer";
 
 import "./Home.css";
 
@@ -23,6 +28,20 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
+        <div className="Home-header">
+          <h2 className="Home-title">
+            <List className="Home-titleIcon" />
+            <span className="Home-titleText">Latest Torrents</span>
+          </h2>
+          <IconButton
+            component="a"
+            className="Home-action"
+            target="_blank"
+            href="https://bangumi.moe/rss/latest"
+          >
+            <RSSFeed />
+          </IconButton>
+        </div>
         <PaginatorContainer
           store={this.paginator}
           page={this.page}

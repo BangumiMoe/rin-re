@@ -1,3 +1,26 @@
-.Home {
-  padding-top: 0.5rem;
+.Home-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.Home-title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.Home-titleIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+.Home-action {
+  color: rgba(0, 0, 0, 0.4);
 }
