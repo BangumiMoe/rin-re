@@ -27,24 +27,24 @@ class PaginatorContainer extends React.Component {
     const { store, transition, page, onPageChange, children } = this.props;
     return (
       <Container store={store} id={page} transition={false}>
-        {(data, page) => (
-          <div>
-            {transition ? (
-              <TransitionGroup>
-                <Fade key={page} appear exit={false}>
+        {(data, page) =>
+          transition ? (
+            <TransitionGroup>
+              <Fade key={page} appear exit={false}>
+                <div>
                   {children(data, page)}
-                </Fade>
-              </TransitionGroup>
-            ) : (
-              children(data, page)
-            )}
-            <Paginator
-              value={page}
-              pageCount={store.pageCount}
-              onChange={onPageChange}
-            />
-          </div>
-        )}
+                  <Paginator
+                    value={page}
+                    pageCount={store.pageCount}
+                    onChange={onPageChange}
+                  />
+                </div>
+              </Fade>
+            </TransitionGroup>
+          ) : (
+            children(data, page)
+          )
+        }
       </Container>
     );
   }

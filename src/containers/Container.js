@@ -55,7 +55,7 @@ class Container extends React.Component {
           (transition ? (
             <TransitionGroup>
               <Fade key={id} appear exit={false}>
-                {children(item, id)}
+                <div>{children(item, id)}</div>
               </Fade>
             </TransitionGroup>
           ) : (
