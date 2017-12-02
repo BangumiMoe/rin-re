@@ -41,35 +41,35 @@ class LanguageSwitcher extends React.Component {
 
   render() {
     const { t } = this.props;
-    return [
-      <IconButton
-        key="button"
-        className="LanguageSwitcher"
-        aria-label={t("Change Language")}
-        onClick={this.handleClick}
-      >
-        <LanguageIcon />
-      </IconButton>,
+    return (
+      <React.Fragment>
+        <IconButton
+          className="LanguageSwitcher"
+          aria-label={t("Change Language")}
+          onClick={this.handleClick}
+        >
+          <LanguageIcon />
+        </IconButton>
 
-      <Dialog
-        key="dialog"
-        className="LanguageSwitcher-dialog"
-        open={this.state.dialogOpen}
-        onRequestClose={this.handleDialogRequestClose}
-      >
-        <DialogTitle>{t("Language")}</DialogTitle>
-        <List>
-          {LANGUAGES.map(({ language, text }) => (
-            <ListItem
-              key={language}
-              onClick={() => this.handleRequestChange(language)}
-            >
-              {text}
-            </ListItem>
-          ))}
-        </List>
-      </Dialog>,
-    ];
+        <Dialog
+          className="LanguageSwitcher-dialog"
+          open={this.state.dialogOpen}
+          onRequestClose={this.handleDialogRequestClose}
+        >
+          <DialogTitle>{t("Language")}</DialogTitle>
+          <List>
+            {LANGUAGES.map(({ language, text }) => (
+              <ListItem
+                key={language}
+                onClick={() => this.handleRequestChange(language)}
+              >
+                {text}
+              </ListItem>
+            ))}
+          </List>
+        </Dialog>
+      </React.Fragment>
+    );
   }
 }
 
