@@ -12,11 +12,9 @@ class RichText extends React.Component {
   };
 
   render() {
+    const { html } = this.props;
     return (
-      <div
-        className="RichText"
-        dangerouslySetInnerHTML={{ __html: this.props.html }}
-      />
+      <div className="RichText" dangerouslySetInnerHTML={{ __html: html }} />
     );
   }
 }

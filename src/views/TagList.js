@@ -11,10 +11,11 @@ class TagList extends React.Component {
   };
 
   render() {
+    const { list } = this.props;
     return (
       <div className="TagList">
         <ul className="TagList-list">
-          {this.props.list.map(item => (
+          {list.map(item => (
             <li key={item.id} className="TagList-item">
               <TagItem item={item} />
             </li>

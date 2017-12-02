@@ -93,11 +93,11 @@ class AuthDialog extends React.Component {
   };
 
   render() {
-    const t = this.props.t;
+    const { t, open } = this.props;
     return (
       <Dialog
         className="AuthDialog"
-        open={this.props.open}
+        open={open}
         onRequestClose={this.handleRequestClose}
         onExited={this.handleExited}
       >

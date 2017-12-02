@@ -45,21 +45,21 @@ class Container extends React.Component {
   }
 
   render() {
-    const store = this.props.store;
+    const { store, transition, children } = this.props;
     const loading = store.state === "loading";
     const id = loading ? this.state.prevId : this.props.id;
     const item = id !== null ? store.get(id) : null;
     return (
       <LoaderContainer loading={loading}>
         {item &&
-          (this.props.transition ? (
+          (transition ? (
             <TransitionGroup>
               <Fade key={id} appear exit={false}>
-                {this.props.children(item, id)}
+                {children(item, id)}
               </Fade>
             </TransitionGroup>
           ) : (
-            this.props.children(item, id)
+            children(item, id)
           ))}
       </LoaderContainer>
     );

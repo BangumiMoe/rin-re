@@ -11,7 +11,7 @@ class TorrentList extends React.Component {
   };
 
   render() {
-    const list = this.props.list;
+    const { list } = this.props;
     return (
       <ul className="TorrentList">
         {list.map(item => (

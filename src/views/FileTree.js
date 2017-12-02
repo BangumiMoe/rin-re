@@ -66,11 +66,8 @@ class FileTree extends React.PureComponent {
   };
 
   render() {
-    return (
-      <Tree
-        content={this.props.content.map(([path, size]) => ({ path, size }))}
-      />
-    );
+    const { content } = this.props;
+    return <Tree content={content.map(([path, size]) => ({ path, size }))} />;
   }
 }
 

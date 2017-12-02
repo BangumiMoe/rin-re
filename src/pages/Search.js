@@ -8,7 +8,7 @@ import SearchEditor from "../views/SearchEditor";
 
 class Search extends React.Component {
   render() {
-    const t = this.props.t;
+    const { t } = this.props;
     return (
       <div className="Search">
         <SearchEditor />

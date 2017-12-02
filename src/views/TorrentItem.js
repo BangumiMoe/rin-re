@@ -14,7 +14,7 @@ class TorrentItem extends React.Component {
   };
 
   render() {
-    const item = this.props.item;
+    const { item } = this.props;
     return (
       <article>
         <ButtonBase

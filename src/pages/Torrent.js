@@ -16,7 +16,7 @@ class Torrent extends React.Component {
   }
 
   render() {
-    const t = this.props.t;
+    const { t } = this.props;
     return (
       <div className="Torrent">
         <Helmet title={t("Torrent")} />

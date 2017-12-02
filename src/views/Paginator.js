@@ -39,7 +39,7 @@ class Paginator extends React.Component {
           <ChevronLeftIcon />
         </IconButton>
         <div className="Paginator-text">
-          {this.props.value} / {this.props.pageCount}
+          {value} / {pageCount}
         </div>
         <IconButton
           className="Paginator-button"

@@ -8,7 +8,7 @@ import "./SearchEditor.css";
 
 class SearchEditor extends React.Component {
   render() {
-    const t = this.props.t;
+    const { t } = this.props;
     return (
       <div className="SearchEditor">
         <InputBase className="SearchEditor-editor" />

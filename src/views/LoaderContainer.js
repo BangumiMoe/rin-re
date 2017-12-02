@@ -14,10 +14,11 @@ class LoaderContainer extends React.Component {
   };
 
   render() {
+    const { loading, children } = this.props;
     return (
       <div className="LoaderContainer">
-        {this.props.children}
-        {this.props.loading && (
+        {children}
+        {loading && (
           <div className="LoaderContainer-overlay">
             <div className="LoaderContainer-loader">
               <Loader />
