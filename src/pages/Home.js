@@ -3,7 +3,7 @@ import { inject } from "mobx-react";
 import { translate } from "react-i18next";
 
 import ListIcon from "react-icons/lib/md/list";
-import RSSFeedIcon from "react-icons/lib/md/rss-feed";
+import FeedIcon from "react-icons/lib/md/rss-feed";
 
 import injectSearchParams from "../utils/injectSearchParams";
 
@@ -45,7 +45,7 @@ class Home extends React.Component {
               target="_blank"
               href="https://bangumi.moe/rss/latest"
             >
-              <RSSFeedIcon />
+              <FeedIcon />
             </IconButton>
           }
         />

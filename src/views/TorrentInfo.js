@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { translate } from "react-i18next";
 import Helmet from "react-helmet";
 
-import FileDownloadIcon from "react-icons/lib/md/file-download";
+import DownloadIcon from "react-icons/lib/md/file-download";
 
 import * as link from "../utils/link";
 
@@ -43,7 +43,7 @@ class TorrentInfo extends React.Component {
                 primary
                 href={item.magnet}
               >
-                <FileDownloadIcon className="TorrentInfo-downloadIcon" />
+                <DownloadIcon className="TorrentInfo-downloadIcon" />
                 {t("Magnet")}
               </Button>
               <Button
@@ -53,7 +53,7 @@ class TorrentInfo extends React.Component {
                 primary
                 href={link.download(item)}
               >
-                <FileDownloadIcon className="TorrentInfo-downloadIcon" />
+                <DownloadIcon className="TorrentInfo-downloadIcon" />
                 {t("Torrent")}
               </Button>
             </div>
