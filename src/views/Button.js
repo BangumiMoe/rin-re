@@ -8,12 +8,12 @@ import "./Button.css";
 
 class Button extends React.Component {
   static propTypes = {
+    raised: PropTypes.bool.isRequired,
     primary: PropTypes.bool.isRequired,
-    type: PropTypes.string.isRequired,
   };
   static defaultProps = {
+    raised: false,
     primary: false,
-    type: "button",
   };
 
   render() {

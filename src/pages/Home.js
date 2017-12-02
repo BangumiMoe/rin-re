@@ -2,15 +2,14 @@ import React from "react";
 import { inject } from "mobx-react";
 import { translate } from "react-i18next";
 
-import List from "react-icons/lib/md/list";
-import RSSFeed from "react-icons/lib/md/rss-feed";
+import ListIcon from "react-icons/lib/md/list";
+import RSSFeedIcon from "react-icons/lib/md/rss-feed";
 
 import IconButton from "../views/IconButton";
+import SectionTitle from "../views/SectionTitle";
 import TorrentList from "../views/TorrentList";
 
 import PaginatorContainer from "../containers/PaginatorContainer";
-
-import "./Home.css";
 
 class Home extends React.Component {
   get paginator() {
@@ -30,20 +29,20 @@ class Home extends React.Component {
     const t = this.props.t;
     return (
       <div className="Home">
-        <div className="Home-header">
-          <h2 className="Home-title">
-            <List className="Home-titleIcon" />
-            <span className="Home-titleText">{t("Latest Torrents")}</span>
-          </h2>
-          <IconButton
-            component="a"
-            className="Home-action"
-            target="_blank"
-            href="https://bangumi.moe/rss/latest"
-          >
-            <RSSFeed />
-          </IconButton>
-        </div>
+        <SectionTitle
+          icon={ListIcon}
+          title={t("Latest Torrents")}
+          actions={
+            <IconButton
+              component="a"
+              className="Home-action"
+              target="_blank"
+              href="https://bangumi.moe/rss/latest"
+            >
+              <RSSFeedIcon />
+            </IconButton>
+          }
+        />
         <PaginatorContainer
           store={this.paginator}
           page={this.page}

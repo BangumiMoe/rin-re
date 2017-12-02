@@ -10,8 +10,10 @@ import Store from "./stores/Store";
 import ScrollManager from "./views/effects/ScrollManager";
 import AppHeader from "./views/AppHeader";
 import AppFooter from "./views/AppFooter";
+
 import Home from "./pages/Home";
 import Torrent from "./pages/Torrent";
+import Search from "./pages/Search";
 
 import i18n from "./i18n";
 
@@ -40,6 +42,7 @@ class App extends React.Component {
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/torrent/:id" component={Torrent} />
+                  <Route path="/search" component={Search} />
                 </Switch>
               </main>
               <AppFooter />

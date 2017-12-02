@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import Ripple from "./Ripple";
@@ -10,9 +11,14 @@ const PRESS_EVENTS = ["pointerdown"];
 const RELEASE_EVENTS = ["pointerup", "pointerleave", "pointercancel"];
 
 class ButtonBase extends React.Component {
-  static propTypes = {};
+  static propTypes = {
+    component: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+      .isRequired,
+    type: PropTypes.string.isRequired,
+  };
   static defaultProps = {
     component: "button",
+    type: "button",
   };
 
   timerHandler = null;

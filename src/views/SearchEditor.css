@@ -1,0 +1,22 @@
+.SearchEditor {
+  display: flex;
+  align-items: center;
+  padding: 3rem 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+}
+
+.SearchEditor-editor {
+  display: block;
+  width: 40rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.SearchEditor-button {
+  width: 6rem;
+  margin-left: 1rem;
+  line-height: 1.5rem;
+}

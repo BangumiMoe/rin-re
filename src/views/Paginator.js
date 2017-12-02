@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { translate } from "react-i18next";
 
-import ChevronLeft from "react-icons/lib/md/chevron-left";
-import ChevronRight from "react-icons/lib/md/chevron-right";
+import ChevronLeftIcon from "react-icons/lib/md/chevron-left";
+import ChevronRightIcon from "react-icons/lib/md/chevron-right";
 
 import IconButton from "./IconButton";
 
@@ -36,7 +36,7 @@ class Paginator extends React.Component {
           disabled={value === 1}
           onClick={this.handlePrev}
         >
-          <ChevronLeft />
+          <ChevronLeftIcon />
         </IconButton>
         <div className="Paginator-text">
           {this.props.value} / {this.props.pageCount}
@@ -47,7 +47,7 @@ class Paginator extends React.Component {
           disabled={value === pageCount}
           onClick={this.handleNext}
         >
-          <ChevronRight />
+          <ChevronRightIcon />
         </IconButton>
       </div>
     );

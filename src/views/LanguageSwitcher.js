@@ -1,7 +1,7 @@
 import React from "react";
 import { translate } from "react-i18next";
 
-import Language from "react-icons/lib/md/language";
+import LanguageIcon from "react-icons/lib/md/language";
 
 import IconButton from "./IconButton";
 import List, { ListItem } from "./List";
@@ -48,7 +48,7 @@ class LanguageSwitcher extends React.Component {
         aria-label={t("Change Language")}
         onClick={this.handleClick}
       >
-        <Language />
+        <LanguageIcon />
       </IconButton>,
 
       <Dialog

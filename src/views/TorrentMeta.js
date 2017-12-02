@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { translate } from "react-i18next";
 import format from "date-fns/format";
 
-import Person from "react-icons/lib/md/person";
-import Group from "react-icons/lib/md/group";
+import PersonIcon from "react-icons/lib/md/person";
+import GroupIcon from "react-icons/lib/md/group";
 
 import "./TorrentMeta.css";
 
@@ -31,11 +31,11 @@ class TorrentMeta extends React.Component {
           <Item name={t("Publish Time")}>
             {format(item.publishTime, "YYYY-MM-DD")}
           </Item>
-          <Item icon={Person} name={t("Publisher")}>
+          <Item icon={PersonIcon} name={t("Publisher")}>
             {item.uploader.username}
           </Item>
           {item.team && (
-            <Item icon={Group} name={t("Team")}>
+            <Item icon={GroupIcon} name={t("Team")}>
               {item.team.name}
             </Item>
           )}

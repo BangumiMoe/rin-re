@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import sortBy from "lodash/sortBy";
 import groupBy from "lodash/groupBy";
 
-import File from "react-icons/lib/md/insert-drive-file";
-import Folder from "react-icons/lib/md/folder";
+import FileIcon from "react-icons/lib/md/insert-drive-file";
+import FolderIcon from "react-icons/lib/md/folder";
 
 import "./FileTree.css";
 
@@ -41,7 +41,7 @@ const Tree = ({ content }) => (
         child.type === "file" ? (
           <li key={child.name} className="FileTree-treeItem">
             <div className="FileTree-item" title={child.name}>
-              <File className="FileTree-itemIcon" />
+              <FileIcon className="FileTree-itemIcon" />
               <span className="FileTree-itemName">{child.name}</span>
               <span className="FileTree-itemSize">{child.size}</span>
             </div>
@@ -49,7 +49,7 @@ const Tree = ({ content }) => (
         ) : (
           <li key={child.name} className="FileTree-treeItem">
             <div className="FileTree-item" title={child.name}>
-              <Folder className="FileTree-itemIcon" />
+              <FolderIcon className="FileTree-itemIcon" />
               <span className="FileTree-itemName">{child.name}</span>
               <span className="FileTree-itemSize">-</span>
             </div>

@@ -1,0 +1,13 @@
+.InputBase {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
+  color: currentColor;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}

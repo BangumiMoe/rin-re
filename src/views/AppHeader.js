@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { translate } from "react-i18next";
 
-import Search from "react-icons/lib/md/search";
+import SearchIcon from "react-icons/lib/md/search";
 
 import ButtonBase from "./ButtonBase";
 import IconButton from "./IconButton";
@@ -21,7 +21,7 @@ const AppHeader = ({ t }) => (
     <div className="AppHeader-side">
       <div className="AppHeader-sideItem">
         <IconButton className="AppHeader-search" component={Link} to="/search">
-          <Search />
+          <SearchIcon />
         </IconButton>
       </div>
       <div className="AppHeader-sideItem">

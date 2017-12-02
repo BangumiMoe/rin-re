@@ -2,7 +2,7 @@ import React from "react";
 import { observer, inject } from "mobx-react";
 import { translate } from "react-i18next";
 
-import Person from "react-icons/lib/md/person";
+import PersonIcon from "react-icons/lib/md/person";
 import { TransitionGroup } from "react-transition-group";
 
 import * as link from "../utils/link";
@@ -74,7 +74,7 @@ class UserCenter extends React.Component {
                     aria-label={t("Login")}
                     onClick={this.handleLogin}
                   >
-                    <Person />
+                    <PersonIcon />
                   </IconButton>
                 </div>
               </Fade>
