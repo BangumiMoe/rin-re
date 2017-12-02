@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { translate } from "react-i18next";
 
+import Search from "react-icons/lib/md/search";
+
 import ButtonBase from "./ButtonBase";
+import IconButton from "./IconButton";
 import LanguageSwitcher from "./LanguageSwitcher";
 import UserCenter from "./UserCenter";
 
@@ -16,6 +19,11 @@ const AppHeader = ({ t }) => (
       </ButtonBase>
     </div>
     <div className="AppHeader-side">
+      <div className="AppHeader-sideItem">
+        <IconButton className="AppHeader-search" component={Link} to="/search">
+          <Search />
+        </IconButton>
+      </div>
       <div className="AppHeader-sideItem">
         <LanguageSwitcher />
       </div>
