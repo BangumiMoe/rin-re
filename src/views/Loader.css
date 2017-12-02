@@ -40,7 +40,7 @@
 }
 
 @keyframes Loader-circle {
-  0.01% {
+  0% {
     stroke-dashoffset: 89.54;
     transform: rotateX(0deg) rotate(0deg);
   }
