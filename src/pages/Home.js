@@ -5,6 +5,7 @@ import { translate } from "react-i18next";
 import ListIcon from "react-icons/lib/md/list";
 import FeedIcon from "react-icons/lib/md/rss-feed";
 
+import * as link from "../utils/link";
 import injectSearchParams from "../utils/injectSearchParams";
 
 import IconButton from "../views/IconButton";
@@ -39,12 +40,7 @@ class Home extends React.Component {
           icon={ListIcon}
           title={t("Latest Torrents")}
           actions={
-            <IconButton
-              component="a"
-              className="Home-action"
-              target="_blank"
-              href="https://bangumi.moe/rss/latest"
-            >
+            <IconButton component="a" target="_blank" href={link.feed()}>
               <FeedIcon />
             </IconButton>
           }

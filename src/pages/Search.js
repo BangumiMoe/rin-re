@@ -3,9 +3,12 @@ import { inject } from "mobx-react";
 import { translate } from "react-i18next";
 
 import SearchIcon from "react-icons/lib/md/search";
+import FeedIcon from "react-icons/lib/md/rss-feed";
 
+import * as link from "../utils/link";
 import injectSearchParams from "../utils/injectSearchParams";
 
+import IconButton from "../views/IconButton";
 import SectionTitle from "../views/SectionTitle";
 import SearchEditor from "../views/SearchEditor";
 import TorrentList from "../views/TorrentList";
@@ -52,10 +55,26 @@ class Search extends React.Component {
     const { t } = this.props;
     return (
       <div className="Search">
-        <SearchEditor defaultValue={this.query} onSubmit={this.handleSubmit} />
+        <SearchEditor
+          autoFocus
+          defaultValue={this.query}
+          onSubmit={this.handleSubmit}
+        />
         {this.query && (
           <React.Fragment>
-            <SectionTitle icon={SearchIcon} title={t("Search Results")} />
+            <SectionTitle
+              icon={SearchIcon}
+              title={t("Search Results")}
+              actions={
+                <IconButton
+                  component="a"
+                  target="_blank"
+                  href={link.searchFeed(this.query)}
+                >
+                  <FeedIcon />
+                </IconButton>
+              }
+            />
             <SearchContainer
               store={this.paginator}
               query={this.query}

@@ -9,17 +9,30 @@ class InputBase extends React.Component {
     component: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
       .isRequired,
     type: PropTypes.string.isRequired,
+    autoFocus: PropTypes.bool.isRequired,
   };
   static defaultProps = {
     component: "input",
     type: "text",
+    autoFocus: false,
   };
+
+  componentDidMount() {
+    if (this.props.autoFocus && this.root && this.root.focus) {
+      this.root.focus();
+    }
+  }
 
   render() {
     const { innerRef, component: Component, className, ...props } = this.props;
     return (
       <Component
-        ref={innerRef}
+        ref={node => {
+          this.root = node;
+          if (innerRef) {
+            innerRef(node);
+          }
+        }}
         className={classNames("InputBase", className)}
         {...props}
       />

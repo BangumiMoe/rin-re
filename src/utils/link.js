@@ -7,3 +7,7 @@ export const download = torrent =>
   `${HOST}/download/torrent/${torrent.id}/${encodeURIComponent(
     torrent.title,
   )}.torrent`;
+
+export const feed = () => `${HOST}/rss/latest`;
+export const searchFeed = query =>
+  `${HOST}/rss/search/${encodeURIComponent(query)}`;

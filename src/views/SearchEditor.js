@@ -9,24 +9,31 @@ import "./SearchEditor.css";
 
 class SearchEditor extends React.Component {
   static propTypes = {
+    autoFocus: PropTypes.bool.isRequired,
     defaultValue: PropTypes.string,
     onSubmit: PropTypes.func,
+  };
+  static defaultProps = {
+    autoFocus: false,
   };
 
   handleSubmit = event => {
     event.preventDefault();
+
+    this.editor.blur();
     if (this.props.onSubmit) {
       this.props.onSubmit(this.editor.value);
     }
   };
 
   render() {
-    const { t, defaultValue } = this.props;
+    const { t, autoFocus, defaultValue } = this.props;
     return (
       <form className="SearchEditor" onSubmit={this.handleSubmit}>
         <InputBase
           innerRef={node => (this.editor = node)}
           className="SearchEditor-editor"
+          autoFocus={autoFocus}
           defaultValue={defaultValue}
         />
         <Button raised primary className="SearchEditor-button" type="submit">
