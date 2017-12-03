@@ -1,6 +1,7 @@
 import React from "react";
 import { inject } from "mobx-react";
 import { translate } from "react-i18next";
+import Helmet from "react-helmet";
 
 import SearchIcon from "react-icons/lib/md/search";
 import RSSFeedIcon from "react-icons/lib/md/rss-feed";
@@ -55,12 +56,15 @@ class Search extends React.Component {
     const { t } = this.props;
     return (
       <div className="Search">
+        <Helmet title={t("Search")} />
+
         <SearchEditor
           key={this.query}
           autoFocus={!this.query}
           defaultValue={this.query}
           onSubmit={this.handleSubmit}
         />
+
         {this.query && (
           <React.Fragment>
             <SectionTitle

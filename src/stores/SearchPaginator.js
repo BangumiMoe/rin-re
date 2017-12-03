@@ -21,10 +21,12 @@ const SearchPaginator = types.compose(
     }))
     .actions(self => ({
       setQuery: query => {
-        self.query = query;
-        self.count = 0;
-        self.pageCount = 0;
-        self.pages = {};
+        if (query !== self.query) {
+          self.query = query;
+          self.count = 0;
+          self.pageCount = 0;
+          self.pages = {};
+        }
       },
       load: flow(function*(page) {
         const currentQuery = self.query;
