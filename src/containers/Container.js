@@ -6,6 +6,7 @@ import { TransitionGroup } from "react-transition-group";
 
 import Fade from "../views/transitions/Fade";
 import LoaderContainer from "../views/LoaderContainer";
+import ErrorState from "../views/ErrorState";
 
 class Container extends React.Component {
   static propTypes = {
@@ -51,7 +52,8 @@ class Container extends React.Component {
     const item = id !== null ? store.get(id) : null;
     return (
       <LoaderContainer loading={loading}>
-        {item &&
+        {store.state === "done" &&
+          item &&
           (transition ? (
             <TransitionGroup>
               <Fade key={id} appear exit={false}>
@@ -61,6 +63,7 @@ class Container extends React.Component {
           ) : (
             children(item, id)
           ))}
+        {store.state === "error" && <ErrorState />}
       </LoaderContainer>
     );
   }

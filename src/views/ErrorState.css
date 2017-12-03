@@ -1,0 +1,13 @@
+.ErrorState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 30rem;
+  padding: 4rem;
+}
+
+.ErrorState-status {
+  font-size: 2rem;
+  color: #f44336;
+}
