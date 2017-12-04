@@ -1,0 +1,48 @@
+{
+  "projectName": "rin-re",
+  "projectOwner": "BangumiMoe",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 128,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "lixiaoyan",
+      "name": "XiaoYan Li",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1610614?v=4",
+      "profile": "https://ptr.moe/",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "hominthesky",
+      "name": "HungI Chao",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3354378?v=4",
+      "profile": "http://zzao.im",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "tengattack",
+      "name": "tengattack",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1846356?v=4",
+      "profile": "http://blog.tengattack.com/about",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "TundraWork",
+      "name": "Jiayi Cheng",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/8012410?v=4",
+      "profile": "https://railgun.im",
+      "contributions": [
+        "ideas"
+      ]
+    }
+  ]
+}
