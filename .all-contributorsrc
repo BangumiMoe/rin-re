@@ -1,11 +1,9 @@
 {
   "projectName": "rin-re",
   "projectOwner": "BangumiMoe",
-  "files": [
-    "README.md"
-  ],
+  "contributorsPerLine": 6,
+  "contributorTemplate": "[<img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>\" /><br /><sub><%= contributor.name %></sub>](https://github.com/<%= contributor.login %>)<br /><%= contributions %>",
   "imageSize": 80,
-  "commit": false,
   "contributors": [
     {
       "login": "lixiaoyan",
