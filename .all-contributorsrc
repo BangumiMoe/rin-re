@@ -2,7 +2,7 @@
   "projectName": "rin-re",
   "projectOwner": "BangumiMoe",
   "contributorsPerLine": 6,
-  "contributorTemplate": "[<img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>\" /><br /><sub><%= contributor.name %></sub>](https://github.com/<%= contributor.login %>)<br /><%= contributions %>",
+  "contributorTemplate": "[<img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>\" /><br /><sup><%= contributor.name %></sup>](https://github.com/<%= contributor.login %>)<br /><%= contributions %>",
   "imageSize": 80,
   "contributors": [
     {
