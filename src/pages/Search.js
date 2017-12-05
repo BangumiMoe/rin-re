@@ -78,6 +78,7 @@ class Search extends React.Component {
                   component="a"
                   target="_blank"
                   href={link.searchRSS(this.query)}
+                  title={t("RSS Feed")}
                   aria-label={t("RSS Feed")}
                 >
                   <RSSFeedIcon />

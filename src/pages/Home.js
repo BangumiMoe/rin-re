@@ -44,6 +44,7 @@ class Home extends React.Component {
               component="a"
               target="_blank"
               href={link.rss()}
+              title={t("RSS Feed")}
               aria-label={t("RSS Feed")}
             >
               <RSSFeedIcon />
