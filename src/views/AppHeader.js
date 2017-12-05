@@ -17,24 +17,40 @@ const AppHeader = ({ t }) => (
       <ButtonBase component={Link} className="AppHeader-home" to="/">
         <h1 className="AppHeader-logo">{t("Bangumi Moe")}</h1>
       </ButtonBase>
+      <nav className="AppHeader-nav">
+        <ul className="AppHeader-navList">
+          <li className="AppHeader-navItem">
+            <ButtonBase
+              ripple={{ center: true }}
+              component={Link}
+              className="AppHeader-navLink"
+              to="/bangumi/list"
+            >
+              {t("Bangumi List")}
+            </ButtonBase>
+          </li>
+        </ul>
+      </nav>
     </div>
     <div className="AppHeader-side">
-      <div className="AppHeader-sideItem">
-        <IconButton
-          className="AppHeader-search"
-          component={Link}
-          to="/search"
-          aria-label={t("Search")}
-        >
-          <SearchIcon />
-        </IconButton>
-      </div>
-      <div className="AppHeader-sideItem">
-        <LanguageSwitcher />
-      </div>
-      <div className="AppHeader-sideItem">
-        <UserCenter />
-      </div>
+      <ul className="AppHeader-actions">
+        <li className="AppHeader-action">
+          <IconButton
+            className="AppHeader-search"
+            component={Link}
+            to="/search"
+            aria-label={t("Search")}
+          >
+            <SearchIcon />
+          </IconButton>
+        </li>
+        <li className="AppHeader-action">
+          <LanguageSwitcher />
+        </li>
+        <li className="AppHeader-action">
+          <UserCenter />
+        </li>
+      </ul>
     </div>
   </header>
 );

@@ -11,11 +11,14 @@
 }
 
 .AppHeader-main {
+  display: flex;
+  align-items: center;
   flex: 1;
-  margin-right: 4rem;
 }
 
 .AppHeader-home {
+  position: relative;
+  top: -0.25rem;
   overflow: visible;
   margin: -1rem -2rem;
   padding: 1rem 2rem;
@@ -43,13 +46,49 @@
   border-bottom: 4px solid;
 }
 
+.AppHeader-nav {
+  margin-left: 4rem;
+}
+
+.AppHeader-navList {
+  display: flex;
+  align-items: center;
+  margin: 0 -1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.AppHeader-navItem {
+  margin: 0 1rem;
+}
+
+.AppHeader-navLink {
+  overflow: visible;
+  display: block;
+  margin: -1rem;
+  padding: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.AppHeader-navLink .Ripple-ripple {
+  width: 12rem !important;
+  height: 12rem !important;
+}
+
 .AppHeader-side {
+  margin-left: 4rem;
+}
+
+.AppHeader-actions {
   display: flex;
   align-items: center;
   margin: 0 -0.5rem;
+  padding: 0;
+  list-style: none;
 }
 
-.AppHeader-sideItem {
+.AppHeader-action {
   margin: 0 0.5rem;
 }
 
