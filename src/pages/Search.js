@@ -1,5 +1,5 @@
 import React from "react";
-import { inject } from "mobx-react";
+import { inject, observer } from "mobx-react";
 import { translate } from "react-i18next";
 import Helmet from "react-helmet";
 
@@ -69,7 +69,10 @@ class Search extends React.Component {
           <React.Fragment>
             <SectionTitle
               icon={SearchIcon}
-              title={t("Search Results")}
+              title={
+                t("Search Results") +
+                (this.paginator.count ? ` (${this.paginator.count})` : "")
+              }
               actions={
                 <IconButton
                   component="a"
@@ -96,4 +99,6 @@ class Search extends React.Component {
   }
 }
 
-export default translate()(injectSearchParams(inject("store")(Search)));
+export default translate()(
+  injectSearchParams(inject("store")(observer(Search))),
+);
