@@ -42,4 +42,8 @@ $ npm run analyze
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
+## License
+
+MIT License
+
 [opencc]: https://github.com/BYVoid/OpenCC
