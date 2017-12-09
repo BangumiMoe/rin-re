@@ -1,0 +1,30 @@
+.BangumiDay {
+  display: flex;
+  padding: 3rem 4rem;
+}
+
+.BangumiDay-title {
+  width: 12rem;
+  margin: 0;
+  margin-right: 4rem;
+  font-size: 2rem;
+  font-variant: small-caps;
+  line-height: 4rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.BangumiDay-content {
+  flex: 1;
+}
+
+.BangumiDay-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.BangumiDay-item {
+  margin: 0.5rem;
+}

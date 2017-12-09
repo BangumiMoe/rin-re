@@ -13,6 +13,14 @@
   "Previous Page": "Previous Page",
   "Next Page": "Next Page",
 
+  "Weekday 0": "Sunday",
+  "Weekday 1": "Monday",
+  "Weekday 2": "Tuesday",
+  "Weekday 3": "Wednesday",
+  "Weekday 4": "Thursday",
+  "Weekday 5": "Friday",
+  "Weekday 6": "Saturday",
+
   "User Avatar": "User Avatar",
   "User Menu": "User Menu",
   "Login": "Login",

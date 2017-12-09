@@ -32,7 +32,10 @@ class SearchPaginator extends React.Component {
     const { store, query, ...props } = this.props;
     return (
       store.query &&
-      query && <PaginatorContainer key={query} store={store} {...props} />
+      query &&
+      store.query === query && (
+        <PaginatorContainer key={query} store={store} {...props} />
+      )
     );
   }
 }
