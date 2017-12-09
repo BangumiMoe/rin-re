@@ -13,6 +13,7 @@ const LANGUAGES = [
   { language: "en", text: "English" },
   { language: "zh-Hans", text: "简体中文" },
   { language: "zh-Hant", text: "繁體中文" },
+  { language: "ja", text: "日本語" },
 ];
 
 class LanguageSwitcher extends React.Component {

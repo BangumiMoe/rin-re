@@ -17,9 +17,9 @@ const BangumiList = types.compose(
     .actions(self => ({
       load: flow(function*() {
         const result = yield self.fetch(http =>
-          http.get("/api/bangumi/current"),
+          http.get("/api/v2/bangumi/current"),
         );
-        self.items = result;
+        self.items = result.bangumis;
       }),
     })),
 );
