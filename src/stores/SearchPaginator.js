@@ -32,10 +32,9 @@ const SearchPaginator = types.compose(
         const currentQuery = self.query;
         const result = yield self.fetch(http =>
           http.get(
-            `/api/v2/torrent/search?${new URLSearchParams({
-              query: currentQuery,
-              p: page,
-            }).toString()}`,
+            `/api/v2/torrent/search?query=${encodeURIComponent(
+              currentQuery,
+            )}&p=${page}`,
           ),
         );
         if (currentQuery === self.query) {

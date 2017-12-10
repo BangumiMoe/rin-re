@@ -21,12 +21,7 @@ class BangumiItem extends React.Component {
         <ButtonBase
           component={Link}
           className="BangumiItem"
-          to={
-            "/search?" +
-            new URLSearchParams({
-              query: `\`${item.tag.id}\``,
-            }).toString()
-          }
+          to={`/bangumi/${item.id}`}
         >
           <img className="BangumiItem-cover" src={link.bangumiIcon(item)} />
           <div className="BangumiItem-content">

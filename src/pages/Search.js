@@ -31,12 +31,7 @@ class Search extends React.Component {
 
   handleSubmit = query => {
     if (query) {
-      this.props.history.push(
-        "/search?" +
-          new URLSearchParams({
-            query,
-          }).toString(),
-      );
+      this.props.history.push(`/search?query=${encodeURIComponent(query)}`);
     } else {
       this.props.history.push("/search");
     }
@@ -44,11 +39,7 @@ class Search extends React.Component {
 
   handlePageChange = page => {
     this.props.history.push(
-      "/search?" +
-        new URLSearchParams({
-          query: this.query,
-          page,
-        }).toString(),
+      `/search?query=${encodeURIComponent(this.query)}&page=${page}`,
     );
   };
 

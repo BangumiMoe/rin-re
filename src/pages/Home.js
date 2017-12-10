@@ -24,12 +24,7 @@ class Home extends React.Component {
   }
 
   handlePageChange = page => {
-    this.props.history.push(
-      "/?" +
-        new URLSearchParams({
-          page,
-        }).toString(),
-    );
+    this.props.history.push(`/?page=${page}`);
   };
 
   render() {

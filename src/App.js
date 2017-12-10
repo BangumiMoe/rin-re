@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "mobx-react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { I18nextProvider, I18n } from "react-i18next";
 import Helmet from "react-helmet";
 
@@ -13,8 +13,8 @@ import AppFooter from "./views/AppFooter";
 
 import Home from "./pages/Home";
 import Torrent from "./pages/Torrent";
-import BangumiList from "./pages/BangumiList";
 import Search from "./pages/Search";
+import BangumiList from "./pages/BangumiList";
 
 import i18n from "./i18n";
 
@@ -43,8 +43,18 @@ class App extends React.Component {
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/torrent/:id" component={Torrent} />
-                  <Route path="/bangumi/list" component={BangumiList} />
+                  <Route
+                    path="/tag/:id"
+                    render={({ match }) => (
+                      <Redirect
+                        to={`/search?query=${encodeURIComponent(
+                          "`" + match.params.id + "`",
+                        )}`}
+                      />
+                    )}
+                  />
                   <Route path="/search" component={Search} />
+                  <Route path="/bangumi/list" component={BangumiList} />
                 </Switch>
               </main>
               <AppFooter />
