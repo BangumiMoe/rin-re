@@ -9,6 +9,7 @@ class SearchPaginator extends React.Component {
     store: PropTypes.object.isRequired,
     query: PropTypes.string.isRequired,
     page: PropTypes.number.isRequired,
+    data: PropTypes.any,
     transition: PropTypes.bool.isRequired,
     onPageChange: PropTypes.func,
     children: PropTypes.func.isRequired,
@@ -30,7 +31,9 @@ class SearchPaginator extends React.Component {
 
   shouldComponentUpdate(nextProps) {
     return (
-      this.props.query !== nextProps.query || this.props.page !== nextProps.page
+      this.props.query !== nextProps.query ||
+      this.props.page !== nextProps.page ||
+      this.props.data !== nextProps.data
     );
   }
 

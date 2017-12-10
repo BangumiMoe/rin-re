@@ -15,6 +15,7 @@ const TorrentStore = types.compose(
       get: id => self.items.get(id),
     }))
     .actions(self => ({
+      set: (id, item) => self.items.set(id, item),
       load: flow(function*(id) {
         const result = yield self.fetch(http =>
           http.get(`/api/v2/torrent/${id}`),

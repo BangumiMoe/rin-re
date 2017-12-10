@@ -3,7 +3,18 @@ import { inject } from "mobx-react";
 import { translate } from "react-i18next";
 import Helmet from "react-helmet";
 
+import ListIcon from "react-icons/lib/md/list";
+import RSSFeedIcon from "react-icons/lib/md/rss-feed";
+
+import * as link from "../utils/link";
+import injectSearchParams from "../utils/injectSearchParams";
+
+import IconButton from "../views/IconButton";
+import SectionTitle from "../views/SectionTitle";
+import TorrentList from "../views/TorrentList";
+
 import Container from "../containers/Container";
+import SearchContainer from "../containers/SearchContainer";
 
 class Bangumi extends React.Component {
   get bangumis() {
@@ -14,18 +25,57 @@ class Bangumi extends React.Component {
     return this.props.match.params.id;
   }
 
+  get paginator() {
+    return this.props.store.searchPaginator;
+  }
+
+  get page() {
+    return Number(this.props.searchParams.get("page")) || 1;
+  }
+
+  handlePageChange = page => {
+    this.props.history.push(`/bangumi/${this.id}?page=${page}`);
+  };
+
   render() {
     const { t } = this.props;
     return (
       <div className="Bangumi">
         <Helmet title={t("Bangumi")} />
 
-        <Container store={this.bangumis} id={this.id}>
-          {bangumi => <div>{JSON.stringify(bangumi)}</div>}
+        <Container store={this.bangumis} id={this.id} data={this.page}>
+          {bangumi => (
+            <div>
+              {JSON.stringify(bangumi)}
+              <SectionTitle
+                icon={ListIcon}
+                title={t("Latest Torrents")}
+                actions={
+                  <IconButton
+                    component="a"
+                    target="_blank"
+                    href={link.searchRSS("`" + bangumi.tag.id + "`")}
+                    title={t("RSS Feed")}
+                    aria-label={t("RSS Feed")}
+                  >
+                    <RSSFeedIcon />
+                  </IconButton>
+                }
+              />
+              <SearchContainer
+                store={this.paginator}
+                query={"`" + bangumi.tag.id + "`"}
+                page={this.page}
+                onPageChange={this.handlePageChange}
+              >
+                {torrents => <TorrentList list={torrents} />}
+              </SearchContainer>
+            </div>
+          )}
         </Container>
       </div>
     );
   }
 }
 
-export default translate()(inject("store")(Bangumi));
+export default translate()(injectSearchParams(inject("store")(Bangumi)));

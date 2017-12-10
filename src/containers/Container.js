@@ -12,6 +12,7 @@ class Container extends React.Component {
   static propTypes = {
     store: PropTypes.object.isRequired,
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    data: PropTypes.any,
     transition: PropTypes.bool,
     children: PropTypes.func.isRequired,
   };
@@ -37,7 +38,7 @@ class Container extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.id !== nextProps.id;
+    return this.props.id !== nextProps.id || this.props.data !== nextProps.data;
   }
 
   load(id) {
