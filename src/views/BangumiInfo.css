@@ -28,10 +28,11 @@
 
 .BangumiInfo-credit {
   margin: 0;
+  margin-bottom: auto;
   font-size: 0.75rem;
   color: rgba(0, 0, 0, 0.4);
 }
 
 .BangumiInfo-tags {
-  margin-top: auto;
+  margin-top: 0.5rem;
 }
