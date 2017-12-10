@@ -11,7 +11,7 @@ import BangumiSchedule from "../views/BangumiSchedule";
 import Container from "../containers/Container";
 
 class BangumiList extends React.Component {
-  get bangumi() {
+  get bangumis() {
     return this.props.store.bangumiList;
   }
 
@@ -21,8 +21,8 @@ class BangumiList extends React.Component {
       <div>
         <Helmet title={t("Bangumi List")} />
         <SectionTitle icon={Schedule} title={t("Bangumi Schedule")} />
-        <Container store={this.bangumi} id="data">
-          {list => <BangumiSchedule list={list} />}
+        <Container store={this.bangumis} id="data">
+          {bangumis => <BangumiSchedule list={bangumis} />}
         </Container>
       </div>
     );

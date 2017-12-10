@@ -1,4 +1,4 @@
-import { types, flow } from "mobx-state-tree";
+import { types, flow, getParent } from "mobx-state-tree";
 
 import Fetch from "./Fetch";
 
@@ -20,6 +20,11 @@ const BangumiList = types.compose(
           http.get("/api/v2/bangumi/current"),
         );
         self.items = result.bangumis;
+
+        const bangumis = getParent(self).bangumis;
+        result.bangumis.forEach(bangumi => {
+          bangumis.set(bangumi.id, bangumi);
+        });
       }),
     })),
 );

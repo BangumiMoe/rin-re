@@ -5,6 +5,7 @@ import TorrentStore from "./TorrentStore";
 import TorrentPaginator from "./TorrentPaginator";
 import SearchPaginator from "./SearchPaginator";
 import BangumiList from "./BangumiList";
+import BangumiStore from "./BangumiStore";
 
 const Store = types.model({
   auth: Auth,
@@ -12,6 +13,7 @@ const Store = types.model({
   torrentPaginator: TorrentPaginator,
   searchPaginator: SearchPaginator,
   bangumiList: BangumiList,
+  bangumis: BangumiStore,
 });
 
 export default types.optional(Store, {});

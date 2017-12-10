@@ -38,7 +38,6 @@ class Position extends React.Component {
           order: 900,
           enabled: true,
           fn: data => {
-            console.log(data);
             this.setState({ data });
             return data;
           },

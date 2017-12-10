@@ -4,8 +4,8 @@ import uuid from "uuid/v4";
 const Fetch = types
   .model({
     state: types.optional(
-      types.enumeration(["initial", "loading", "done", "error"]),
-      "initial",
+      types.enumeration(["loading", "done", "error"]),
+      "done",
     ),
   })
   .actions(self => {

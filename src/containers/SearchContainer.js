@@ -28,6 +28,12 @@ class SearchPaginator extends React.Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    return (
+      this.props.query !== nextProps.query || this.props.page !== nextProps.page
+    );
+  }
+
   render() {
     const { store, query, ...props } = this.props;
     return (

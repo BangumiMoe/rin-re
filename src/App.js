@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Torrent from "./pages/Torrent";
 import Search from "./pages/Search";
 import BangumiList from "./pages/BangumiList";
+import Bangumi from "./pages/Bangumi";
 
 import i18n from "./i18n";
 
@@ -55,6 +56,7 @@ class App extends React.Component {
                   />
                   <Route path="/search" component={Search} />
                   <Route path="/bangumi/list" component={BangumiList} />
+                  <Route path="/bangumi/:id" component={Bangumi} />
                 </Switch>
               </main>
               <AppFooter />

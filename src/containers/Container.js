@@ -20,10 +20,12 @@ class Container extends React.Component {
   };
 
   state = {
+    mounted: false,
     prevId: null,
   };
 
   componentDidMount() {
+    this.setState({ mounted: true });
     this.load(this.props.id);
   }
 
@@ -52,8 +54,7 @@ class Container extends React.Component {
     const item = id !== null ? store.get(id) : null;
     return (
       <LoaderContainer loading={loading}>
-        {store.state === "done" &&
-          item &&
+        {item &&
           (transition ? (
             <TransitionGroup>
               <Fade key={id} appear exit={false}>
@@ -63,7 +64,9 @@ class Container extends React.Component {
           ) : (
             children(item, id)
           ))}
-        {store.state === "error" && <ErrorState />}
+        {this.state.mounted &&
+          !item &&
+          store.state === "error" && <ErrorState />}
       </LoaderContainer>
     );
   }
