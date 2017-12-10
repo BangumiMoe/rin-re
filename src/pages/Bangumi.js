@@ -4,12 +4,10 @@ import { translate } from "react-i18next";
 import Helmet from "react-helmet";
 
 import ListIcon from "react-icons/lib/md/list";
-import RSSFeedIcon from "react-icons/lib/md/rss-feed";
 
-import * as link from "../utils/link";
 import injectSearchParams from "../utils/injectSearchParams";
 
-import IconButton from "../views/IconButton";
+import RSSButton from "../views/RSSButton";
 import SectionTitle from "../views/SectionTitle";
 import TorrentList from "../views/TorrentList";
 
@@ -50,17 +48,7 @@ class Bangumi extends React.Component {
               <SectionTitle
                 icon={ListIcon}
                 title={t("Latest Torrents")}
-                actions={
-                  <IconButton
-                    component="a"
-                    target="_blank"
-                    href={link.searchRSS("`" + bangumi.tag.id + "`")}
-                    title={t("RSS Feed")}
-                    aria-label={t("RSS Feed")}
-                  >
-                    <RSSFeedIcon />
-                  </IconButton>
-                }
+                actions={<RSSButton query={"`" + bangumi.tag.id + "`"} />}
               />
               <SearchContainer
                 store={this.paginator}

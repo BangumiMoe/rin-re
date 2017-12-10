@@ -4,12 +4,10 @@ import { translate } from "react-i18next";
 import Helmet from "react-helmet";
 
 import SearchIcon from "react-icons/lib/md/search";
-import RSSFeedIcon from "react-icons/lib/md/rss-feed";
 
-import * as link from "../utils/link";
 import injectSearchParams from "../utils/injectSearchParams";
 
-import IconButton from "../views/IconButton";
+import RSSButton from "../views/RSSButton";
 import SectionTitle from "../views/SectionTitle";
 import SearchEditor from "../views/SearchEditor";
 import TorrentList from "../views/TorrentList";
@@ -64,17 +62,7 @@ class Search extends React.Component {
                 t("Search Results") +
                 (this.paginator.count ? ` (${this.paginator.count})` : "")
               }
-              actions={
-                <IconButton
-                  component="a"
-                  target="_blank"
-                  href={link.searchRSS(this.query)}
-                  title={t("RSS Feed")}
-                  aria-label={t("RSS Feed")}
-                >
-                  <RSSFeedIcon />
-                </IconButton>
-              }
+              actions={<RSSButton query={this.query} />}
             />
             <SearchContainer
               store={this.paginator}

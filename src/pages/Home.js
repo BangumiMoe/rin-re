@@ -3,12 +3,10 @@ import { inject } from "mobx-react";
 import { translate } from "react-i18next";
 
 import ListIcon from "react-icons/lib/md/list";
-import RSSFeedIcon from "react-icons/lib/md/rss-feed";
 
-import * as link from "../utils/link";
 import injectSearchParams from "../utils/injectSearchParams";
 
-import IconButton from "../views/IconButton";
+import RSSButton from "../views/RSSButton";
 import SectionTitle from "../views/SectionTitle";
 import TorrentList from "../views/TorrentList";
 
@@ -34,17 +32,7 @@ class Home extends React.Component {
         <SectionTitle
           icon={ListIcon}
           title={t("Latest Torrents")}
-          actions={
-            <IconButton
-              component="a"
-              target="_blank"
-              href={link.rss()}
-              title={t("RSS Feed")}
-              aria-label={t("RSS Feed")}
-            >
-              <RSSFeedIcon />
-            </IconButton>
-          }
+          actions={<RSSButton />}
         />
         <PaginatorContainer
           store={this.paginator}
