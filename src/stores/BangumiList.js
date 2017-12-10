@@ -19,6 +19,9 @@ const BangumiList = types.compose(
         const result = yield self.fetch(http =>
           http.get("/api/v2/bangumi/current"),
         );
+        result.bangumis.forEach(bangumi => {
+          bangumi.teams = result.workingTeams[bangumi.tag.id];
+        });
         self.items = result.bangumis;
 
         const bangumis = getParent(self).bangumis;

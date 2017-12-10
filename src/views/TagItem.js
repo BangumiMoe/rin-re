@@ -10,12 +10,17 @@ import "./TagItem.css";
 class TagItem extends React.Component {
   static propTypes = {
     item: PropTypes.object.isRequired,
+    link: PropTypes.string,
   };
 
   render() {
-    const { item } = this.props;
+    const { item, link } = this.props;
     return (
-      <ButtonBase component={Link} className="TagItem" to={`/tag/${item.id}`}>
+      <ButtonBase
+        component={Link}
+        className="TagItem"
+        to={link || `/tag/${item.id}`}
+      >
         <Translate value={item.name} locales={item.locale} />
       </ButtonBase>
     );

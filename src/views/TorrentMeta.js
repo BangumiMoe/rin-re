@@ -6,6 +6,8 @@ import format from "date-fns/format";
 import PersonIcon from "react-icons/lib/md/person";
 import GroupIcon from "react-icons/lib/md/group";
 
+import Translate from "./Translate";
+
 import "./TorrentMeta.css";
 
 const Item = ({ icon: Icon, name, children }) => (
@@ -36,7 +38,10 @@ class TorrentMeta extends React.Component {
           </Item>
           {item.team && (
             <Item icon={GroupIcon} name={t("Team")}>
-              {item.team.name}
+              <Translate
+                value={item.team.tag.name}
+                locales={item.team.tag.locale}
+              />
             </Item>
           )}
         </div>

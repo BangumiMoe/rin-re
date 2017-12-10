@@ -8,16 +8,17 @@ import "./TagList.css";
 class TagList extends React.Component {
   static propTypes = {
     list: PropTypes.arrayOf(PropTypes.object).isRequired,
+    link: PropTypes.func,
   };
 
   render() {
-    const { list } = this.props;
+    const { list, link } = this.props;
     return (
       <div className="TagList">
         <ul className="TagList-list">
           {list.map(item => (
             <li key={item.id} className="TagList-item">
-              <TagItem item={item} />
+              <TagItem item={item} link={link && link(item)} />
             </li>
           ))}
         </ul>

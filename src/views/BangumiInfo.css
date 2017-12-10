@@ -1,0 +1,37 @@
+.BangumiInfo {
+  display: flex;
+  padding: 2rem 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+}
+
+.BangumiInfo-cover {
+  width: 6rem;
+  height: 6rem;
+  margin-right: 2rem;
+  border-radius: 2px;
+  background-color: #eee;
+}
+
+.BangumiInfo-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.BangumiInfo-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.BangumiInfo-credit {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.BangumiInfo-tags {
+  margin-top: auto;
+}
