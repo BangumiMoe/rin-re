@@ -30,7 +30,7 @@ class BangumiInfo extends React.Component {
           <p className="BangumiInfo-credit">{item.credit}</p>
           <div className="BangumiInfo-tags">
             <TagList
-              list={item.teams.map(team => team.tag)}
+              list={item.workingTeams.map(team => team.tag)}
               link={teamTag =>
                 `/search?query=${encodeURIComponent(
                   [item.tag, teamTag].map(tag => "`" + tag.id + "`").join(" "),

@@ -20,7 +20,7 @@ const BangumiList = types.compose(
           http.get("/api/v2/bangumi/current"),
         );
         result.bangumis.forEach(bangumi => {
-          bangumi.teams = result.workingTeams[bangumi.tag.id];
+          bangumi.workingTeams = result.workingTeams[bangumi.tag.id];
         });
         self.items = result.bangumis;
 
