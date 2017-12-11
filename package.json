@@ -44,7 +44,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-i18next": "^6.2.0",
+    "react-i18next": "^7.1.1",
     "react-icons": "^2.2.7",
     "react-overlays": "github:lixiaoyan/react-overlays#prebuilt",
     "react-router-dom": "^4.2.2",
@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "husky": "^0.14.3",
-    "lint-staged": "^4.3.0",
+    "lint-staged": "^6.0.0",
     "prettier": "^1.9.1",
     "source-map-explorer": "^1.5.0"
   }
