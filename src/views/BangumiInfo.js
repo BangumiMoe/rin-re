@@ -37,16 +37,20 @@ class BangumiInfo extends React.Component {
             <Translate value={item.tag.name} locales={item.tag.locale} />
           </h1>
           <p className="BangumiInfo-credit">{item.credit}</p>
-          <div className="BangumiInfo-tags">
-            <TagList
-              list={item.workingTeams.map(team => team.tag)}
-              link={teamTag =>
-                `/search?query=${encodeURIComponent(
-                  [item.tag, teamTag].map(tag => "`" + tag.id + "`").join(" "),
-                )}`
-              }
-            />
-          </div>
+          {item.workingTeams && (
+            <div className="BangumiInfo-teams">
+              <TagList
+                list={item.workingTeams.map(team => team.tag)}
+                link={teamTag =>
+                  `/search?query=${encodeURIComponent(
+                    [item.tag, teamTag]
+                      .map(tag => "`" + tag.id + "`")
+                      .join(" "),
+                  )}`
+                }
+              />
+            </div>
+          )}
         </header>
       </article>
     );
