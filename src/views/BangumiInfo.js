@@ -22,7 +22,16 @@ class BangumiInfo extends React.Component {
           {name => <Helmet title={name} />}
         </Translate>
 
-        <img className="BangumiInfo-cover" src={link.bangumiIcon(item)} />
+        <Translate value={item.tag.name} locales={item.tag.locale}>
+          {name => (
+            <img
+              className="BangumiInfo-cover"
+              src={link.bangumiIcon(item)}
+              alt={name}
+            />
+          )}
+        </Translate>
+
         <header className="BangumiInfo-content">
           <h1 className="BangumiInfo-title">
             <Translate value={item.tag.name} locales={item.tag.locale} />

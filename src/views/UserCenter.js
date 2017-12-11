@@ -94,7 +94,7 @@ class UserCenter extends React.Component {
                     <img
                       className="UserCenter-avatar"
                       src={link.avatar(currentUser)}
-                      alt={t("User Avatar")}
+                      alt={currentUser.username}
                     />
                   </IconButton>
 
