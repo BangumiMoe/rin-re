@@ -32,7 +32,8 @@
 .AppHeader-logo {
   position: relative;
   margin: 0;
-  font-family: "Roboto Slab", "Roboto", "Noto Sans CJK SC", sans-serif;
+  font-family: "Roboto Slab", "Roboto", "Noto Sans CJK SC", system-ui,
+    sans-serif;
   font-size: 2rem;
   font-weight: 700;
 }
