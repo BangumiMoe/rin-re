@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import {
   Editor as DraftEditor,
   EditorState,
@@ -22,6 +23,7 @@ class SearchEditor extends React.Component {
   };
 
   state = {
+    focused: false,
     editorState: EditorState.createWithContent(
       ContentState.createFromText(this.props.defaultValue),
     ),
@@ -90,9 +92,21 @@ class SearchEditor extends React.Component {
     this.change(editorState);
   };
 
+  handleFocus = () => {
+    this.setState({ focused: true });
+  };
+
+  handleBlur = () => {
+    this.setState({ focused: false });
+  };
+
   render() {
     return (
-      <div className="SearchEditor">
+      <div
+        className={classNames("SearchEditor", {
+          "is-focused": this.state.focused,
+        })}
+      >
         <DraftEditor
           ref={node => (this.editor = node)}
           editorState={this.state.editorState}
@@ -100,6 +114,8 @@ class SearchEditor extends React.Component {
           handleReturn={this.handleReturn}
           handlePastedText={this.handlePastedText}
           handleDrop={this.handleDrop}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
         />
       </div>
     );

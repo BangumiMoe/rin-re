@@ -7,14 +7,6 @@
   background-clip: padding-box;
 }
 
-.SearchBar-editor {
-  overflow: hidden;
-  width: 40rem;
-  border-radius: 2px;
-  background-color: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 .SearchBar-button {
   width: 6rem;
   margin-left: 1rem;

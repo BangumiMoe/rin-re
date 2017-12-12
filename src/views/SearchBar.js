@@ -37,14 +37,12 @@ class SearchBar extends React.Component {
     const { t, defaultValue, autoFocus } = this.props;
     return (
       <form className="SearchBar" onSubmit={this.handleSubmit}>
-        <div className="SearchBar-editor">
-          <SearchEditor
-            ref={node => (this.editor = node)}
-            defaultValue={defaultValue}
-            autoFocus={autoFocus}
-            onSubmit={this.handleEditorSubmit}
-          />
-        </div>
+        <SearchEditor
+          ref={node => (this.editor = node)}
+          defaultValue={defaultValue}
+          autoFocus={autoFocus}
+          onSubmit={this.handleEditorSubmit}
+        />
         <Button raised primary className="SearchBar-button" type="submit">
           {t("Search")}
         </Button>

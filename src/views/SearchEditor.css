@@ -1,3 +1,17 @@
+.SearchEditor {
+  overflow: hidden;
+  width: 40rem;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 250ms;
+}
+
+.SearchEditor:hover,
+.SearchEditor.is-focused {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .SearchEditor .public-DraftEditor-content {
   padding: 0.5rem 1rem;
 }
