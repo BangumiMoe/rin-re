@@ -1,0 +1,70 @@
+.TextField {
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.TextField-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.6);
+  transition: color 250ms;
+}
+
+.TextField-content {
+  position: relative;
+  display: block;
+  border-bottom: 2px solid transparent;
+}
+
+.TextField-content::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  transition: border 250ms;
+}
+
+.TextField-input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  padding: 0.25rem 0;
+}
+
+.TextField-helperText {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.TextField:hover .TextField-content::after {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+.TextField.is-focused .TextField-label {
+  color: #304ffe;
+}
+
+.TextField.is-focused .TextField-content::after {
+  border-bottom: 2px solid #304ffe;
+}
+
+.TextField.is-error .TextField-label {
+  color: #ff1744;
+}
+
+.TextField.is-error .TextField-content::after {
+  border-bottom: 2px solid #ff1744;
+}
+
+.TextField.is-error .TextField-helperText {
+  color: #ff1744;
+}
+
+.TextField.is-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 import { observer, inject } from "mobx-react";
 import { translate } from "react-i18next";
 
-import TextField from "material-ui/TextField";
-
 import Fade from "../transitions/Fade";
 import Loader from "../Loader";
 import Button from "../Button";
+import TextField from "../TextField";
 import Dialog, { DialogTitle, DialogContent, DialogActions } from "../Dialog";
 
 import "./AuthDialog.css";
@@ -111,10 +110,9 @@ class AuthDialog extends React.Component {
                 onChange={this.handleUsernameChange}
                 id="AuthDialog-username"
                 label={t("Username")}
-                fullWidth
-                margin="dense"
-                autoFocus
+                readOnly={this.state.loading}
                 error={this.state.invalid}
+                autoFocus
               />
             </div>
             <div>
@@ -124,8 +122,7 @@ class AuthDialog extends React.Component {
                 id="AuthDialog-password"
                 label={t("Password")}
                 type="password"
-                fullWidth
-                margin="dense"
+                readOnly={this.state.loading}
                 error={this.state.invalid}
                 helperText={
                   this.state.invalid

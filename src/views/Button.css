@@ -4,6 +4,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.8);
   transition: opacity 250ms, box-shadow 250ms;
 }
 
