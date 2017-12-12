@@ -1,47 +1,109 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { translate } from "react-i18next";
+import {
+  Editor as DraftEditor,
+  EditorState,
+  ContentState,
+  Modifier,
+} from "draft-js";
 
-import Button from "./Button";
-import InputBase from "./InputBase";
-
+import "draft-js/dist/Draft.css";
 import "./SearchEditor.css";
 
 class SearchEditor extends React.Component {
   static propTypes = {
+    defaultValue: PropTypes.string.isRequired,
     autoFocus: PropTypes.bool.isRequired,
-    defaultValue: PropTypes.string,
     onSubmit: PropTypes.func,
   };
   static defaultProps = {
+    defaultValue: "",
     autoFocus: false,
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
+  state = {
+    editorState: EditorState.createWithContent(
+      ContentState.createFromText(this.props.defaultValue),
+    ),
+  };
 
-    this.editor.blur();
-    if (this.props.onSubmit) {
-      this.props.onSubmit(this.editor.value);
+  componentDidMount() {
+    if (this.props.autoFocus) {
+      this.editor.focus();
     }
+  }
+
+  get value() {
+    return this.state.editorState.getCurrentContent().getPlainText();
+  }
+
+  focus() {
+    this.editor.focus();
+  }
+
+  blur() {
+    this.editor.blur();
+  }
+
+  change(editorState) {
+    this.setState({ editorState });
+  }
+
+  insert(text, selection = this.state.editorState.getSelection()) {
+    const editorState = this.state.editorState;
+    this.change(
+      EditorState.push(
+        editorState,
+        Modifier.replaceText(
+          editorState.getCurrentContent(),
+          selection,
+          text.replace(/\r|\n/g, " "),
+        ),
+      ),
+    );
+  }
+
+  handleReturn = () => {
+    if (this.props.onSubmit) {
+      this.props.onSubmit();
+    }
+    return "handled";
+  };
+
+  handlePastedText = text => {
+    this.insert(text);
+    return "handled";
+  };
+
+  handleDrop = (selection, dataTransfer) => {
+    // https://github.com/facebook/draft-js/issues/1454
+    /*
+    if (dataTransfer.types.includes("text/plain")) {
+      const text = dataTransfer.data.getData("text/plain");
+      this.insert(text, selection);
+    }
+    */
+    return "handled";
+  };
+
+  handleChange = editorState => {
+    this.change(editorState);
   };
 
   render() {
-    const { t, autoFocus, defaultValue } = this.props;
     return (
-      <form className="SearchEditor" onSubmit={this.handleSubmit}>
-        <InputBase
-          innerRef={node => (this.editor = node)}
-          className="SearchEditor-editor"
-          autoFocus={autoFocus}
-          defaultValue={defaultValue}
+      <div className="SearchEditor">
+        <DraftEditor
+          ref={node => (this.editor = node)}
+          editorState={this.state.editorState}
+          onChange={this.handleChange}
+          handleReturn={this.handleReturn}
+          handlePastedText={this.handlePastedText}
+          handleDrop={this.handleDrop}
         />
-        <Button raised primary className="SearchEditor-button" type="submit">
-          {t("Search")}
-        </Button>
-      </form>
+      </div>
     );
   }
 }
 
-export default translate()(SearchEditor);
+export default SearchEditor;

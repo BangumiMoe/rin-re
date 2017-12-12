@@ -9,7 +9,7 @@ import injectSearchParams from "../utils/injectSearchParams";
 
 import RSSButton from "../views/RSSButton";
 import SectionTitle from "../views/SectionTitle";
-import SearchEditor from "../views/SearchEditor";
+import SearchBar from "../views/SearchBar";
 import TorrentList from "../views/TorrentList";
 
 import SearchContainer from "../containers/SearchContainer";
@@ -47,7 +47,7 @@ class Search extends React.Component {
       <div className="Search">
         <Helmet title={t("Search")} />
 
-        <SearchEditor
+        <SearchBar
           key={this.query}
           autoFocus={!this.query}
           defaultValue={this.query}
