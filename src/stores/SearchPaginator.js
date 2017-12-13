@@ -40,7 +40,7 @@ const SearchPaginator = types.compose(
         if (currentQuery === self.query) {
           self.count = result.count;
           self.pageCount = result.pageCount;
-          self.pages.set(page, result.torrents);
+          self.pages.set(page, result.torrents || []);
         }
       }),
     })),

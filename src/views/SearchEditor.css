@@ -15,3 +15,14 @@
 .SearchEditor .public-DraftEditor-content {
   padding: 0.5rem 1rem;
 }
+
+.SearchEditor [data-block] {
+  display: inline-block;
+  vertical-align: middle;
+  /* cursor issue */
+  min-width: 1px;
+}
+
+.SearchEditor figure {
+  margin: 0;
+}
