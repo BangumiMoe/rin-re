@@ -13,5 +13,19 @@
 }
 
 .SearchEditor .public-DraftEditor-content {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.SearchEditor [data-block="true"] {
+  display: inline-block;
+  min-width: 1px;
+  vertical-align: middle;
+}
+
+.SearchEditor .public-DraftStyleDefault-block {
+  padding: 0 0.25rem;
+}
+
+.SearchEditor figure {
+  margin: 0;
 }

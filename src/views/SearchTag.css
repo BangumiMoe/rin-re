@@ -1,0 +1,9 @@
+.SearchTag {
+  display: block;
+  margin: -0.25rem 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  color: #3f51b5;
+  background-color: rgba(63, 83, 181, 0.1);
+}
