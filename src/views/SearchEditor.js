@@ -143,8 +143,8 @@ class SearchEditor extends React.Component {
           return strip(block.getText());
         }
       })
-      .join(" ")
-      .trim();
+      .filter(item => Boolean(item))
+      .join(" ");
   }
 
   focus() {
