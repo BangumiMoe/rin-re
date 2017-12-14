@@ -129,7 +129,22 @@ class SearchEditor extends React.Component {
   }
 
   get value() {
-    return this.state.editorState.getCurrentContent().getPlainText();
+    const editorState = this.state.editorState;
+    const contentState = editorState.getCurrentContent();
+    return contentState
+      .getBlockMap()
+      .toList()
+      .map(block => {
+        if (block.getType() === "atomic") {
+          const entityKey = block.getEntityAt(0);
+          const entity = contentState.getEntity(entityKey);
+          return "`" + entity.getData().id + "`";
+        } else {
+          return strip(block.getText());
+        }
+      })
+      .join(" ")
+      .trim();
   }
 
   focus() {
