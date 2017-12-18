@@ -7,7 +7,7 @@
     "analyze": "source-map-explorer ./build/static/js/main.*",
     "test": "react-scripts test",
     "lint": "eslint . && prettier --list-different \"./**/*.{js,json,css,md}\"",
-    "format": "eslint --fix . && prettier --write \"./**/*.{js,json,css,md}\"",
+    "lint:fix": "eslint --fix . && prettier --write \"./**/*.{js,json,css,md}\"",
     "precommit": "lint-staged"
   },
   "lint-staged": {
