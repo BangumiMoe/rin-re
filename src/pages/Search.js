@@ -15,8 +15,8 @@ import TorrentList from "../views/TorrentList";
 import SearchContainer from "../containers/SearchContainer";
 
 class Search extends React.Component {
-  get paginator() {
-    return this.props.store.searchPaginator;
+  get search() {
+    return this.props.store.search;
   }
 
   get query() {
@@ -43,6 +43,7 @@ class Search extends React.Component {
 
   render() {
     const { t } = this.props;
+    const paginator = this.search.get(this.query);
     return (
       <div className="Search">
         <Helmet title={t("Search")} />
@@ -60,12 +61,12 @@ class Search extends React.Component {
               icon={SearchIcon}
               title={
                 t("Search Results") +
-                (this.paginator.count ? ` (${this.paginator.count})` : "")
+                (paginator && paginator.count ? ` (${paginator.count})` : "")
               }
               actions={<RSSButton query={this.query} />}
             />
             <SearchContainer
-              store={this.paginator}
+              store={this.search}
               query={this.query}
               page={this.page}
               onPageChange={this.handlePageChange}

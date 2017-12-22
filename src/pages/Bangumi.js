@@ -24,8 +24,8 @@ class Bangumi extends React.Component {
     return this.props.match.params.id;
   }
 
-  get paginator() {
-    return this.props.store.searchPaginator;
+  get search() {
+    return this.props.store.search;
   }
 
   get page() {
@@ -53,7 +53,7 @@ class Bangumi extends React.Component {
                 actions={<RSSButton query={"`" + bangumi.tag.id + "`"} />}
               />
               <SearchContainer
-                store={this.paginator}
+                store={this.search}
                 query={"`" + bangumi.tag.id + "`"}
                 page={this.page}
                 onPageChange={this.handlePageChange}

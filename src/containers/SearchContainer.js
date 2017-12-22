@@ -18,14 +18,10 @@ class SearchPaginator extends React.Component {
     transition: true,
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const { store, query } = this.props;
-    store.setQuery(query);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.query !== nextProps.query) {
-      this.props.store.setQuery(nextProps.query);
+    if (!store.has(query)) {
+      store.create(query);
     }
   }
 
@@ -40,11 +36,7 @@ class SearchPaginator extends React.Component {
   render() {
     const { store, query, ...props } = this.props;
     return (
-      store.query &&
-      query &&
-      store.query === query && (
-        <PaginatorContainer key={query} store={store} {...props} />
-      )
+      <PaginatorContainer key={query} store={store.get(query)} {...props} />
     );
   }
 }
