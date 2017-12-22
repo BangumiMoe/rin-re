@@ -28,7 +28,11 @@ class TorrentInfo extends React.Component {
         <header className="TorrentInfo-header">
           <div className="TorrentInfo-headerMain">
             <div className="TorrentInfo-tags">
-              <TagList list={item.tags} />
+              <TagList list={[item.categoryTag]} />
+              <span className="TorrentInfo-tagDivider" />
+              <TagList
+                list={item.tags.filter(tag => tag.id !== item.categoryTag.id)}
+              />
             </div>
             <h1 className="TorrentInfo-title">{item.title}</h1>
             <div className="TorrentInfo-meta">

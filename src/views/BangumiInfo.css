@@ -33,6 +33,15 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
-.BangumiInfo-teams {
+.BangumiInfo-tags {
+  display: flex;
+  align-items: center;
   margin-top: 0.5rem;
+}
+
+.BangumiInfo-tagDivider {
+  display: block;
+  height: 1rem;
+  margin: 0 0.75rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
