@@ -25,6 +25,14 @@ class SearchPaginator extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { store, query } = this.props;
+    const { query: nextQuery } = nextProps;
+    if (query !== nextQuery && !store.has(nextQuery)) {
+      store.create(nextQuery);
+    }
+  }
+
   shouldComponentUpdate(nextProps) {
     return (
       this.props.query !== nextProps.query ||
