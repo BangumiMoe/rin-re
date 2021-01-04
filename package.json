@@ -23,7 +23,7 @@
   },
   "proxy": "https://bangumi.moe",
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "blueimp-md5": "^2.10.0",
     "classnames": "^2.2.5",
     "core-js": "^2.5.2",
