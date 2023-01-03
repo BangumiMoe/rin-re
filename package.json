@@ -49,7 +49,7 @@
     "react-icons": "^2.2.7",
     "react-overlays": "github:lixiaoyan/react-overlays#prebuilt",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.0.17",
+    "react-scripts": "^5.0.1",
     "react-transition-group": "^2.2.1",
     "url-search-params": "^0.10.0",
     "uuid": "^3.1.0"
